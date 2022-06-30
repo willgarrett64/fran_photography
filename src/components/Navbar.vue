@@ -4,7 +4,7 @@
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#gallery">Gallery</a></li>
-      <li><a>Prices</a></li>
+      <li><a href="#prices">Prices</a></li>
       <li><a>Contact</a></li>
       <li><a>EN | DE | BR</a></li>
     </ul>

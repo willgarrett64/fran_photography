@@ -4,6 +4,7 @@
     <HelloWorld />
     <AboutMe />
     <GallerySection />
+    <PricesSection />
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import AboutMe from './components/AboutMe.vue'
 import GallerySection from './components/GallerySection.vue'
 import HelloWorld from './components/HelloWorld.vue'
 import Navbar from './components/Navbar.vue'
+import PricesSection from './components/PricesSection.vue'
 
 export default {
   name: 'App',
@@ -19,7 +21,8 @@ export default {
     AboutMe,
     GallerySection,
     HelloWorld,
-    Navbar
+    Navbar,
+    PricesSection
   }
 }
 </script>
