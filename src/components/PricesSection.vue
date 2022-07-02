@@ -1,6 +1,6 @@
 <template>
-  <section class="cover relative pt-20 px-40" id="prices">
-    <div class="h-full w-full flex items-center justify-between space-x-5">
+  <section class="cover relative pt-20 sm:px-40" id="prices">
+    <div class="h-full w-full flex flex-col sm:flex-row items-center justify-between space-x-5">
       <div>
         <h4>Package 1</h4>
         <div class="package__card">

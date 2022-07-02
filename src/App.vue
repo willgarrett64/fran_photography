@@ -1,9 +1,24 @@
 <template>
-  <div>
+  <div class="h-screen">
     <Navbar />
     <HelloWorld />
+    <div class="flex items-center justify-center bg-gray-700 h-1/3 w-full">
+      <h2 class="text-white text-2xl cursive">Some interesting quote will go here</h2>
+    </div>
     <AboutMe />
+    <div class="flex items-center justify-center bg-gray-700 h-1/3 w-full">
+      <h2 class="text-white text-2xl cursive">Some interesting quote will go here</h2>
+    </div>
+
+    <div class="parallax test h-1/2"></div>
+
+    <div class="flex items-center justify-center bg-gray-700 h-1/3 w-full">
+      <h2 class="text-white text-2xl cursive">Some interesting quote will go here</h2>
+    </div>
     <GallerySection />
+    <div class="flex items-center justify-center bg-gray-700 h-1/3 w-full">
+      <h2 class="text-white text-2xl cursive">Some interesting quote will go here</h2>
+    </div>
     <PricesSection />
   </div>
 </template>
@@ -35,5 +50,29 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+.parallax {
+  /* Full height */
+  height: 100%;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.overlay {
+  @apply w-full h-full bg-gray-500 absolute top-0;
+  opacity: 0.4;
+}
+
+.cursive {
+  font-family: 'Brush Script MT';
+}
+
+.test {
+  background-image: url("./assets/placeholders/landscape-3.jpg");
 }
 </style>
