@@ -1,25 +1,25 @@
 <template>
   <div class="h-screen">
     <Navbar />
-    <HelloWorld />
-    <div class="flex items-center justify-center bg-gray-700 h-1/3 w-full">
-      <h2 class="text-white text-2xl cursive">Some interesting quote will go here</h2>
-    </div>
-    <AboutMe />
-    <div class="flex items-center justify-center bg-gray-700 h-1/3 w-full">
-      <h2 class="text-white text-2xl cursive">Some interesting quote will go here</h2>
-    </div>
-
-    <div class="parallax test h-1/2"></div>
-
-    <div class="flex items-center justify-center bg-gray-700 h-1/3 w-full">
-      <h2 class="text-white text-2xl cursive">Some interesting quote will go here</h2>
-    </div>
-    <GallerySection />
-    <div class="flex items-center justify-center bg-gray-700 h-1/3 w-full">
-      <h2 class="text-white text-2xl cursive">Some interesting quote will go here</h2>
-    </div>
-    <PricesSection />
+    <body class="h-full ">
+      <HelloWorld />
+      <div class="flex items-center justify-center bg-gray-700 h-1/3 w-full">
+        <h2 class="text-white text-2xl cursive">Some interesting quote will go here</h2>
+      </div>
+      <AboutMe />
+      <div class="flex items-center justify-center bg-gray-700 h-1/3 w-full">
+        <h2 class="text-white text-2xl cursive">Some interesting quote will go here</h2>
+      </div>
+      <div class="parallax test h-1/2"></div>
+      <div class="flex items-center justify-center bg-gray-700 h-1/3 w-full">
+        <h2 class="text-white text-2xl cursive">Some interesting quote will go here</h2>
+      </div>
+      <GallerySection />
+      <div class="flex items-center justify-center bg-gray-700 h-1/3 w-full">
+        <h2 class="text-white text-2xl cursive">Some interesting quote will go here</h2>
+      </div>
+      <PricesSection />
+    </body>
   </div>
 </template>
 

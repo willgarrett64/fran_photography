@@ -50,11 +50,6 @@ export default {
   object-fit: cover;
 }
 
-.cover.gallery {
-  @apply sm:h-screen;
-  height: calc(100vh - 80px);
-}
-
 .image__card__holder {
   @apply relative h-1/4 sm:h-auto overflow-hidden;
 }
@@ -73,11 +68,5 @@ export default {
 
 .gallery {
   background-image: url("../assets/placeholders/brickWall-l-1.jpg");
-}
-
-@screen sm {
-  .cover.gallery {
-    @apply h-screen;
-  }
 }
 </style>
