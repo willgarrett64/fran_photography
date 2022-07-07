@@ -19,12 +19,17 @@
         <h2 class="text-white text-2xl cursive">Some interesting quote will go here</h2>
       </div>
       <PricesSection />
+      <div class="flex items-center justify-center bg-gray-700 h-1/3 w-full">
+        <h2 class="text-white text-2xl cursive">Some interesting quote will go here</h2>
+      </div>
+      <ContactSection />
     </body>
   </div>
 </template>
 
 <script>
 import AboutMe from './components/AboutMe.vue'
+import ContactSection from './components/ContactSection.vue'
 import GallerySection from './components/GallerySection.vue'
 import HelloWorld from './components/HelloWorld.vue'
 import Navbar from './components/Navbar.vue'
@@ -34,6 +39,7 @@ export default {
   name: 'App',
   components: {
     AboutMe,
+    ContactSection,
     GallerySection,
     HelloWorld,
     Navbar,
@@ -44,7 +50,6 @@ export default {
 
 <style>
 #app {
-  @apply bg-gray-200;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -1,10 +1,11 @@
 <template>
-  <section class="cover relative flex" id="about">
-    <div class="h-full w-full flex items-center sm:px-20">
-      <p>I am Fran. I like babies. I like pregnant people. Please, please let me take photos of your babies and your pregnant belly. It would make me very happy. You know what? You don't even have to pay me - I will pay you!</p>
-      <!-- <img class="w-80" src="../assets/placeholders/photographer-2.jpg" alt="" srcset=""> -->
+  <section class="cover relative parallax about" id="about">
+    <div class="h-full sm:w-1/2 text-white text-xl flex flex-col justify-center sm:pl-10 sm:pr-32">
+      <div class="flex items-center justify-center px-4 h-1/2">
+        <p>I am Fran. I like babies. I like pregnant people. Please, please let me take photos of your babies and your pregnant belly. It would make me very happy. You know what? You don't even have to pay me - I will pay you!</p>
+      </div>
+      <img class="h-1/2 object-cover sm:hidden" src="../assets/placeholders/photographer-1.jpg" alt="" srcset="">
     </div>
-    <div class="parallax about w-1/2 flex-shrink-0"></div>
   </section>
 </template>
 
@@ -19,11 +20,16 @@ export default {
 
 <style scoped>
 .cover {
-  @apply w-screen h-screen;
-  object-fit: cover;
+  @apply w-screen h-screen object-cover;
 }
 
 .about {
-  background-image: url("../assets/placeholders/photographer-1.jpg")
+  background-color: rgb(175, 203, 190);
+}
+
+@screen sm {
+  .about {
+    background-image: url("../assets/placeholders/about-l-1.jpg");
+  }
 }
 </style>
