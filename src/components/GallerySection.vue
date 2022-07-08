@@ -1,7 +1,7 @@
 <template>
   <section class="cover relative sm:pt-20 parallax gallery flex flex-col justify-center" id="gallery">
     <div class="overlay" />
-    <h2 class="hidden sm:block text-2xl mb-10">Gallery</h2>
+    <h2 class="text-2xl mb-10">Gallery</h2>
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between sm:space-x-5 sm:px-40 w-full h-full sm:h-auto">
       <div class="image__card__holder">
         <div class="overlay sm:hidden"/>

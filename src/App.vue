@@ -3,24 +3,24 @@
     <Navbar />
     <body class="h-full ">
       <HelloWorld />
-      <div class="flex items-center justify-center bg-gray-700 h-1/3 w-full">
-        <h2 class="text-white text-2xl cursive">Some interesting quote will go here</h2>
+      <div class="hidden sm:flex items-center justify-center bg-gray-700 h-1/3 w-full">
+        <h2 class="text-white text-2xl dancing-script">Some interesting quote will go here</h2>
       </div>
       <AboutMe />
       <div class="flex items-center justify-center bg-gray-700 h-1/3 w-full">
-        <h2 class="text-white text-2xl cursive">Some interesting quote will go here</h2>
+        <h2 class="text-white text-2xl dancing-script">Some interesting quote will go here</h2>
       </div>
       <div class="parallax test h-1/2"></div>
       <div class="flex items-center justify-center bg-gray-700 h-1/3 w-full">
-        <h2 class="text-white text-2xl cursive">Some interesting quote will go here</h2>
+        <h2 class="text-white text-2xl dancing-script">Some interesting quote will go here</h2>
       </div>
       <GallerySection />
       <div class="flex items-center justify-center bg-gray-700 h-1/3 w-full">
-        <h2 class="text-white text-2xl cursive">Some interesting quote will go here</h2>
+        <h2 class="text-white text-2xl dancing-script">Some interesting quote will go here</h2>
       </div>
       <PricesSection />
       <div class="flex items-center justify-center bg-gray-700 h-1/3 w-full">
-        <h2 class="text-white text-2xl cursive">Some interesting quote will go here</h2>
+        <h2 class="text-white text-2xl dancing-script">Some interesting quote will go here</h2>
       </div>
       <ContactSection />
     </body>
@@ -50,7 +50,7 @@ export default {
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Arima', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -71,10 +71,6 @@ export default {
 .overlay {
   @apply w-full h-full bg-gray-500 absolute top-0;
   opacity: 0.4;
-}
-
-.cursive {
-  font-family: 'Brush Script MT';
 }
 
 .test {

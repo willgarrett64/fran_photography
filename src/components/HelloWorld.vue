@@ -3,7 +3,7 @@
     <div class="parallax splash"></div>
     <div class="title">
       <img src="../assets/FranPhotographyLogo.jpeg" alt="logo" srcset="" class="hidden">
-      <h1 class="header">I take really good photos.</h1>
+      <h1 class="header dancing-script">I take really good photos.</h1>
       <h2 class="hidden sub-header">Give me money and I will take your photo.</h2>
     </div>
   </section>
@@ -26,17 +26,16 @@ export default {
 }
 
 .title {
-  @apply absolute text-3xl top-56 w-full;
+  @apply absolute text-3xl w-full;
+  top: 25vh;
 }
 
 .header {
   @apply text-4xl;
-  font-family: 'Brush Script MT';
 }
 
 .sub-header {
   @apply text-xl;
-  font-family: 'Trebuchet MS';
 }
 
 @screen sm {
