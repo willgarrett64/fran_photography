@@ -2,22 +2,31 @@
   <nav id="navbar">
     <!-- <span>Martello Photograpy</span> -->
     <img src="../assets/FranPhotographyLogo.jpeg" alt="logo" srcset="" class="h-32">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="#000" stroke-width="2">
+    <svg @click="toggleMenu" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="#000" stroke-width="2">
       <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
     </svg>
-    <!-- <ul class="hidden sm:block">
-      <li><a href="#about">About</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#prices">Prices</a></li>
-      <li><a>Contact</a></li>
-      <li><a>EN | DE | BR</a></li>
-    </ul> -->
   </nav>
+  <NavbarMenu v-if="showMenu" :toggleMenu="toggleMenu" />
 </template>
 
 <script>
+import NavbarMenu from './NavbarMenu.vue'
+
 export default {
   name: 'Navbar',
+  data() {
+    return {
+      showMenu: false
+    }
+  },
+  components: {
+    NavbarMenu
+  },
+  methods: {
+    toggleMenu() {
+      this.showMenu = !this.showMenu
+    }
+  }
   // mounted() {
   //   let prevScrollpos = window.pageYOffset;
   //   window.onscroll = function() {
