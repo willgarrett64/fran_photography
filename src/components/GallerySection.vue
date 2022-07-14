@@ -6,28 +6,28 @@
         <div class="overlay sm:hidden"/>
         <div class="card__title arima"><h4>Pregnancy</h4></div>
         <div class="image__card">
-          <img src="../assets/placeholders/portrait-3.jpg" alt="">
+          <img src="../assets/placeholders/landscape-3.jpg" alt="">
         </div>
       </div>
       <div class="image__card__holder">
         <div class="overlay sm:hidden"/>
         <div class="card__title arima"><h4>Newborn</h4></div>
         <div class="image__card">
-          <img src="../assets/placeholders/newborn-p-1.jpg" alt="">
+          <img src="../assets/placeholders/newborn-l-1.jpg" alt="">
         </div>
       </div>
       <div class="image__card__holder">
         <div class="overlay sm:hidden"/>
         <div class="card__title arima"><h4>Family</h4></div>
         <div class="image__card">
-          <img src="../assets/placeholders/family-p-1.jpg" alt="">
+          <img src="../assets/placeholders/family-l-1.jpg" alt="">
         </div>
       </div>
       <div class="image__card__holder">
         <div class="overlay sm:hidden"/>
         <div class="card__title arima"><h4>Portraits</h4></div>
         <div class="image__card">
-          <img src="../assets/placeholders/portrait-p-1.jpg" alt="">
+          <img src="../assets/placeholders/portrait-l-1.jpg" alt="">
         </div>
       </div>
     </div>

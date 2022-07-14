@@ -1,12 +1,14 @@
 <template>
   <section class="cover relative sm:px-40" id="prices">
-    <div class="carousel h-full w-full flex flex-col sm:flex-row items-center justify-between sm:space-x-5">
+    <h2 class="text-2xl py-4 arima">Prices</h2>
+
+    <div class="carousel w-full flex flex-col sm:flex-row items-center justify-between sm:space-x-5">
       <input type="radio" name="carousel" title="slide1" checked="checked" class="carousel__nav"/>
       <input type="radio" name="carousel" title="slide2" class="carousel__nav"/>
       <input type="radio" name="carousel" title="slide3" class="carousel__nav"/>
       <div class="carousel__inner">
         <div class="carousel__cell">
-          <h4>Package 1</h4>
+          <h4 class="arima mb-2">Package 1</h4>
           <div class="package__card">
             <img src="../assets/placeholders/prices-l-1.jpg" alt="" srcset="">
             <div class="text-overlay">
@@ -20,7 +22,7 @@
           </div>
         </div>
         <div class="carousel__cell">
-          <h4>Package 2</h4>
+          <h4 class="arima mb-2">Package 2</h4>
           <div class="package__card">
             <img src="../assets/placeholders/prices-l-2.jpg" alt="" srcset="">
             <div class="text-overlay">
@@ -34,7 +36,7 @@
           </div>
         </div>
         <div class="carousel__cell">
-          <h4>Package 3</h4>
+          <h4 class="arima mb-2">Package 3</h4>
           <div class="package__card">
             <div class="text-overlay">
               <img src="../assets/placeholders/prices-l-3.jpg" alt="" srcset="">
@@ -50,6 +52,8 @@
         </div>
       </div>
     </div>
+
+    <button class="underline">Create your own package</button>
   </section>
 </template>
 
@@ -89,7 +93,7 @@ export default {
 }
 
 .carousel {
-  height: 100%;
+  height: 80%;
   position: relative;
   overflow: hidden;
   display: -webkit-box;
