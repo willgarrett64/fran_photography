@@ -2,28 +2,28 @@
   <section class="cover relative sm:pt-20 parallax gallery h-screen" id="gallery">
     <h2 class="text-2xl py-4 arima">Gallery</h2>
     <div class="gallery__list">
-      <div class="image__card__holder">
+      <div class="image__card__holder" @click="goToCollection('pregnancy')">
         <div class="overlay sm:hidden"/>
         <div class="card__title arima"><h4>Pregnancy</h4></div>
         <div class="image__card">
           <img src="../assets/placeholders/landscape-3.jpg" alt="">
         </div>
       </div>
-      <div class="image__card__holder">
+      <div class="image__card__holder" @click="goToCollection('newborn')">
         <div class="overlay sm:hidden"/>
         <div class="card__title arima"><h4>Newborn</h4></div>
         <div class="image__card">
           <img src="../assets/placeholders/newborn-l-1.jpg" alt="">
         </div>
       </div>
-      <div class="image__card__holder">
+      <div class="image__card__holder" @click="goToCollection('family')">
         <div class="overlay sm:hidden"/>
         <div class="card__title arima"><h4>Family</h4></div>
         <div class="image__card">
           <img src="../assets/placeholders/family-l-1.jpg" alt="">
         </div>
       </div>
-      <div class="image__card__holder">
+      <div class="image__card__holder" @click="goToCollection('portraits')">
         <div class="overlay sm:hidden"/>
         <div class="card__title arima"><h4>Portraits</h4></div>
         <div class="image__card">
@@ -39,6 +39,11 @@ export default {
   name: 'GallerySection',
   props: {
     msg: String
+  },
+  methods: {
+    goToCollection(collection) {
+      this.$router.push(`/gallery/${collection}`)
+    }
   }
 }
 </script>
@@ -66,7 +71,7 @@ export default {
 }
 
 .gallery {
-  /* background-image: url("../assets/placeholders/brickWall-l-1.jpg"); */
+  background-image: url("../assets/placeholders/brickWall-l-1.jpg");
 }
 
 .gallery__list {
