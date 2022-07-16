@@ -133,7 +133,7 @@ export default {
   },
   methods: {
     getSrc(image) {
-      return `/placeholders/${image.name}`
+      return require(`../assets/placeholders/${image.name}`)
     },
     goTo(newRoute) {
       this.$router.push(newRoute)
