@@ -1,6 +1,6 @@
 <template>
   <section class="cover relative sm:pt-20 parallax gallery h-screen" id="gallery">
-    <h2 class="text-2xl py-4 arima">Gallery</h2>
+    <h2 class="py-8 arima">Gallery</h2>
     <div class="gallery__list">
       <div class="image__card__holder" @click="goToCollection('pregnancy')">
         <div class="overlay sm:hidden"/>
@@ -54,6 +54,10 @@ export default {
   object-fit: cover;
 }
 
+h2 {
+  font-size: 1.8rem;
+}
+
 .image__card__holder {
   @apply relative h-1/4 rounded sm:h-auto overflow-hidden;
 }
@@ -76,6 +80,6 @@ export default {
 
 .gallery__list {
   @apply flex flex-col sm:flex-row sm:items-center sm:justify-between sm:space-x-5 px-4 pb-4 space-y-2 sm:px-40 w-full sm:h-auto;
-  height: calc(100vh - 64px);
+  height: calc(100vh - 108px);
 }
 </style>
