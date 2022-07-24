@@ -1,22 +1,40 @@
 <template>
-  <section class="cover relative parallax contact">
-    <div class="overlay" />
-    <div class="flex flex-col items-center justify-center h-full text-white text-2xl font-bold">
-      <span>Francine Martello</span>
-      <span>01234 567890</span>
-      <span>francine.martello@gmail.com</span>
+  <section class="cover relative parallax contact__section" id="contact">
+    <div class="flex flex-col items-center justify-center h-full dosis md:w-1/2">
+      <div class="contact__details">
+        <span class="name text-2xl">Francine Martello</span>
+        <div class="flex items-center justify-center">
+          <div class="mr-2"><PhoneIcon class="w-5" /></div>
+          <span>01234 567891</span>
+        </div>
+        <div class="flex items-center justify-center">
+          <div class="mr-2"><MailIcon class="w-5" /></div>
+          <span>martellofrancine@gmail.com</span>
+        </div>
+        <div class="social__icons">
+          <!-- facebook link -->
+          <a href="https://www.facebook.com/francine.martello" target="#"><img class="social__icon" src="../assets/placeholders/icons/facebook_icon.png" alt="facebook icon"></a>
+          <!-- instagram link -->
+          <a href="https://www.instagram.com/martello_fran_photography/" target="#"><img class="social__icon" src="../assets/placeholders/icons/instagram_icon.png" alt="instagram icon"></a>
+          <!-- whatsapp link -->
+          <a href="https://api.whatsapp.com/send?phone=+4915752473422" target="#"><img class="social__icon" src="../assets/placeholders/icons/whatsapp_icon.png" alt="whatsapp icon"></a>
+        </div>
+      </div>
     </div>
-    <!-- <div class="title">
-      <img src="../assets/FranPhotographyLogo.jpeg" alt="logo" srcset="">
-      <h1 class="header">I take really good photos.</h1>
-      <h2 class="sub-header">Give me money and I will take your photo.</h2>
-    </div> -->
+    <img class="hidden cover__image parallax" src="../assets/placeholders/download/P10002260078.jpg" alt="">
   </section>
 </template>
 
 <script>
+import { MailIcon, PhoneIcon } from '@heroicons/vue/solid'
+
+
 export default {
-  name: 'ContactSection'
+  name: 'ContactSection',
+  components: {
+    PhoneIcon,
+    MailIcon
+  }
 }
 </script>
 
@@ -26,21 +44,38 @@ export default {
   object-fit: cover;
 }
 
-.contact {
-  background-image: url("../assets/placeholders/download/P10002260071.jpg")
+.contact__section {
+  background-image: url("../assets/placeholders/download/P10002260078.jpg");
+  background-position-x: 58%;
 }
 
-.title {
-  @apply absolute right-40 top-52 w-72;
+.contact__details {
+  @apply w-full py-2 flex flex-col space-y-2 text-xl;
+  background-color: var(--fran-blue-transparent);
+  font-weight: 600;
 }
 
-.header {
-  @apply text-2xl;
-  font-family: 'Brush Script MT';
+.social__icons {
+  @apply w-full flex justify-center space-x-8 pt-1;
 }
 
-.sub-header {
-  @apply text-xl;
-  font-family: 'Trebuchet MS';
+.social__icon {
+  @apply w-8;
+}
+
+@screen md {
+  .contact__section{
+    @apply w-1/2 left-1/2;
+    background-image: none;
+  }
+
+  .cover__image {
+    @apply block absolute top-0 h-full object-cover;
+  }
+
+  .contact__details {
+    @apply absolute -left-full h-screen justify-center;
+    background-color: var(--fran-blue);
+  }
 }
 </style>

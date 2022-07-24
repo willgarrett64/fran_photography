@@ -1,3 +1,12 @@
+:root {
+  --fran-blue: #afcbbe;
+  --fran-blue-transparent: rgba(175, 203, 190, 0.70);
+}
+
+html {
+  overflow-x: hidden;
+}
+
 .dancing-script {
   font-family: 'Dancing Script', cursive;
 }
@@ -8,4 +17,8 @@
 
 .ibarra {
   font-family: 'Ibarra Real Nova', serif;
+}
+
+.dosis {
+  font-family: 'Dosis', sans-serif;
 }

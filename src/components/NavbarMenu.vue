@@ -7,12 +7,12 @@
       </svg>
     </div>
     <ul class="navbar__menu">
-      <li class="arima" @click="toggleMenu"><router-link to="/">Home</router-link></li>
-      <li class="arima" @click="scrollTo('about')">About</li>
-      <li class="arima" @click="scrollTo('gallery')">Gallery</li>
-      <li class="arima" @click="scrollTo('prices')">Prices</li>
-      <li class="arima" @click="scrollTo('contact')">Contact</li>
-      <li class="arima hidden"><a>EN | DE | BR</a></li>
+      <li class="ibarra" @click="toggleMenu"><router-link to="/">Home</router-link></li>
+      <li class="ibarra" @click="scrollTo('about')">About</li>
+      <li class="ibarra" @click="scrollTo('gallery')">Gallery</li>
+      <li class="ibarra" @click="scrollTo('prices')">Prices</li>
+      <li class="ibarra" @click="scrollTo('contact')">Contact</li>
+      <li class="ibarra hidden"><a>EN | DE | BR</a></li>
     </ul>
   </nav>
 </template>
