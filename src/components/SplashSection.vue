@@ -3,7 +3,7 @@
     <div class="parallax splash"></div>
     <div class="title">
       <img src="../assets/FranPhotographyLogo.jpeg" alt="logo" srcset="" class="hidden md:block h-64">
-      <h1 class="header dancing-script">Capturando o que é invisível aos olhos.</h1>
+      <h1 class="header tangerine">Capturando o que é invisível aos olhos.</h1>
       <h2 class="hidden sub-header">Give me money and I will take your photo.</h2>
     </div>
   </section>
@@ -40,7 +40,7 @@ export default {
 
 @screen md {
   .splash {
-    background-image: url("../assets/placeholders/splash-l-1.jpg")
+    background-image: url("../assets/placeholders/download/P10002260086.jpg")
   }
 
   .title {
@@ -48,7 +48,7 @@ export default {
   }
 
   .header {
-    @apply text-4xl;
+    font-size: 3.5rem;
   }
 }
 </style>

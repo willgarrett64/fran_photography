@@ -39,6 +39,7 @@ export default {
 }
 
 .navbar__menu li {
-  @apply text-2xl cursor-pointer hover:underline
+  @apply text-2xl cursor-pointer hover:underline;
+  color: var(--fran-blue-dark);
 }
 </style>
