@@ -1,29 +1,17 @@
 <template>
   <div class="h-full">
     <HelloWorld />
-    <div class="parallax__divider hidden sm:flex">
-      <h2 class="text-white text-2xl dancing-script">Some interesting quote will go here</h2>
-    </div>
+    <QuoteDivider quote="Some interesting quote will go here" extraClasses="hidden md:flex" />
     <AboutMe />
-    <div class="parallax__divider">
-      <h2 class="text-white text-2xl dancing-script">Some interesting quote will go here</h2>
-    </div>
+    <QuoteDivider quote="Some interesting quote will go here" />
     <div class="parallax test"></div>
-    <div class="parallax__divider">
-      <h2 class="text-white text-2xl dancing-script">Some interesting quote will go here</h2>
-    </div>
+    <QuoteDivider quote="Some interesting quote will go here" />
     <GallerySection />
-    <div class="parallax__divider">
-      <h2 class="text-white text-2xl dancing-script">Some interesting quote will go here</h2>
-    </div>
+    <QuoteDivider quote="Some interesting quote will go here" />
     <div class="parallax test2"></div>
-    <div class="parallax__divider">
-      <h2 class="text-white text-2xl dancing-script">Some interesting quote will go here</h2>
-    </div>
+    <QuoteDivider quote="Some interesting quote will go here" />
     <PricesSection />
-    <div class="parallax__divider md:hidden">
-      <h2 class="text-white text-2xl dancing-script">Some interesting quote will go here</h2>
-    </div>
+    <QuoteDivider quote="Some interesting quote will go here" extraClasses="md:hidden" />
     <ContactSection />
   </div>
 </template>
@@ -35,6 +23,7 @@ import ContactSection from '@/components/ContactSection.vue'
 import GallerySection from '@/components/GallerySection.vue'
 import HelloWorld from '@/components/HelloWorld.vue'
 import PricesSection from '@/components/PricesSection.vue'
+import QuoteDivider from '@/components/QuoteDivider.vue'
 
 export default {
   name: 'LandingPage',
@@ -43,7 +32,8 @@ export default {
     ContactSection,
     GallerySection,
     HelloWorld,
-    PricesSection
+    PricesSection,
+    QuoteDivider
   }
 }
 </script>
