@@ -8,10 +8,10 @@
     </div>
     <ul class="navbar__menu">
       <li class="arima" @click="toggleMenu"><router-link to="/">Home</router-link></li>
-      <li class="arima" @click="toggleMenu"><router-link to="/#about">About</router-link></li>
-      <li class="arima" @click="toggleMenu"><router-link to="/#gallery">Gallery</router-link></li>
-      <li class="arima" @click="toggleMenu"><router-link to="/#prices">Prices</router-link></li>
-      <li class="arima" @click="toggleMenu"><router-link to="/#contact">Contact</router-link></li>
+      <li class="arima" @click="scrollTo('about')">About</li>
+      <li class="arima" @click="scrollTo('gallery')">Gallery</li>
+      <li class="arima" @click="scrollTo('prices')">Prices</li>
+      <li class="arima" @click="scrollTo('contact')">Contact</li>
       <li class="arima hidden"><a>EN | DE | BR</a></li>
     </ul>
   </nav>
@@ -22,8 +22,11 @@ export default {
   name: 'NavbarMenu',
   props: ['toggleMenu'],
   methods: {
-    handleClick(sectionId) {
-      this.$emit('select-section', sectionId)
+    scrollTo(elementId) {
+      this.toggleMenu()
+      document.getElementById(elementId).scrollIntoView({
+        behavior: 'smooth'
+      })
     }
   }
 }

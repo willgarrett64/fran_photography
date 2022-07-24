@@ -27,7 +27,7 @@ export default {
 }
 
 .contact {
-  background-image: url("../assets/placeholders/landscape-2.jpg")
+  background-image: url("../assets/placeholders/download/P10002260071.jpg")
 }
 
 .title {

@@ -1,14 +1,15 @@
 <template>
-  <section class="cover relative sm:px-40" id="prices">
-    <h2 class="text-2xl py-4 arima">Prices</h2>
-
+  <section class="cover relative prices parallax sm:px-40" id="prices">
+    <h2 class="text-2xl py-8 arima">Prices</h2>
     <div class="carousel w-full flex flex-col sm:flex-row items-center justify-between sm:space-x-5">
+      <ArrowLeftIcon class="w-4" />
+      <ArrowRightIcon class="w-4" />
       <input type="radio" name="carousel" title="slide1" checked="checked" class="carousel__nav"/>
       <input type="radio" name="carousel" title="slide2" class="carousel__nav"/>
       <input type="radio" name="carousel" title="slide3" class="carousel__nav"/>
       <div class="carousel__inner">
         <div class="carousel__cell">
-          <h4 class="arima mb-2">Package 1</h4>
+          <h4 class="dancing-script mb-2">Package 1</h4>
           <div class="package__card">
             <img src="../assets/placeholders/prices-l-1.jpg" alt="" srcset="">
             <div class="text-overlay">
@@ -22,7 +23,7 @@
           </div>
         </div>
         <div class="carousel__cell">
-          <h4 class="arima mb-2">Package 2</h4>
+          <h4 class="dancing-script mb-2">Package 2</h4>
           <div class="package__card">
             <img src="../assets/placeholders/prices-l-2.jpg" alt="" srcset="">
             <div class="text-overlay">
@@ -36,7 +37,7 @@
           </div>
         </div>
         <div class="carousel__cell">
-          <h4 class="arima mb-2">Package 3</h4>
+          <h4 class="dancing-script mb-2">Package 3</h4>
           <div class="package__card">
             <div class="text-overlay">
               <img src="../assets/placeholders/prices-l-3.jpg" alt="" srcset="">
@@ -58,8 +59,15 @@
 </template>
 
 <script>
+
+import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/vue/outline'
+
 export default {
   name: 'PricesSection',
+  components: {
+    ArrowLeftIcon,
+    ArrowRightIcon
+  },
   props: {
   }
 }
@@ -71,29 +79,43 @@ export default {
   object-fit: cover;
 }
 
+h2 {
+  font-size: 1.8rem;
+}
+
+h4 {
+  @apply font-bold;
+  font-size: 1.4rem;
+}
+
+.prices {
+  background-image: url("../assets/placeholders/brickWall-l-1.jpg");
+}
+
 .package__card {
-  @apply relative w-full h-96 flex flex-col justify-between rounded-xl overflow-hidden;
+  @apply relative w-full h-96 flex flex-col justify-between rounded-xl overflow-hidden bg-white;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 .package__card .text-overlay {
-  @apply flex flex-col h-full justify-between text-black text-left font-bold z-20;
+  font-family: 'arima';
+  @apply text-lg flex flex-col h-full justify-between text-black text-left z-20;
 }
 .package__card ul {
   @apply ml-5 px-4 pt-8;
 }
 .package__card li {
-  list-style-type: circle
+  list-style-type: circle;
 }
 .package__card img {
   @apply w-full h-1/2;
-  object-fit: cover
+  object-fit: cover;
 }
 .package__card .price {
   @apply w-full text-right px-4 pb-8;
 }
 
 .carousel {
-  height: 80%;
+  height: calc(100vh - 108px);
   position: relative;
   overflow: hidden;
   display: -webkit-box;
@@ -118,7 +140,7 @@ export default {
   margin: 2rem 12px;
   border-radius: 50%;
   z-index: 10;
-  outline: 6px solid #ccc;
+  outline: 6px solid rgb(136, 136, 136);
   outline-offset: -6px;
   box-shadow: 0 0 0 0 #333, 0 0 0 0 rgba(51, 51, 51, 0);
   cursor: pointer;
@@ -162,7 +184,8 @@ export default {
 }
 .carousel__cell {
   height: 100%;
-  padding: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
   text-align: center;
   display: -webkit-box;
   display: -webkit-flex;
@@ -180,13 +203,12 @@ export default {
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
-  -webkit-justify-content: center;
+  -webkit-justify-content: start;
       -ms-flex-pack: center;
-          justify-content: center;
+          justify-content: start;
 }
 .carousel__image {
   font-size: 2.7rem;
-      color: #2196F3;
 }
 .carousel__caption {
   font-weight: 500;

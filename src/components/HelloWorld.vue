@@ -3,7 +3,7 @@
     <div class="parallax splash"></div>
     <div class="title">
       <img src="../assets/FranPhotographyLogo.jpeg" alt="logo" srcset="" class="hidden">
-      <h1 class="header arima">I take really good photos.</h1>
+      <h1 class="header dancing-script">Capturando o que é invisível aos olhos.</h1>
       <h2 class="hidden sub-header">Give me money and I will take your photo.</h2>
     </div>
   </section>
@@ -31,7 +31,7 @@ export default {
 }
 
 .header {
-  @apply text-3xl;
+  @apply text-2xl px-1;
 }
 
 .sub-header {
