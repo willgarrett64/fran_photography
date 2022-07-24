@@ -42,8 +42,4 @@ export default {
   @apply w-full h-full bg-gray-500 absolute top-0 z-40;
   opacity: 0.4;
 }
-
-.test {
-  background-image: url("./assets/placeholders/download/P10002260074.jpg");
-}
 </style>
