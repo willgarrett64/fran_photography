@@ -1,6 +1,6 @@
 <template>
   <div class="h-full">
-    <HelloWorld />
+    <SplashSection />
     <QuoteDivider quote="Some interesting quote will go here" extraClasses="hidden md:flex" />
     <AboutMe />
     <QuoteDivider quote="Some interesting quote will go here" />
@@ -21,7 +21,7 @@
 import AboutMe from '@/components/AboutMe.vue'
 import ContactSection from '@/components/ContactSection.vue'
 import GallerySection from '@/components/GallerySection.vue'
-import HelloWorld from '@/components/HelloWorld.vue'
+import SplashSection from '@/components/SplashSection.vue'
 import PricesSection from '@/components/PricesSection.vue'
 import QuoteDivider from '@/components/QuoteDivider.vue'
 
@@ -31,7 +31,7 @@ export default {
     AboutMe,
     ContactSection,
     GallerySection,
-    HelloWorld,
+    SplashSection,
     PricesSection,
     QuoteDivider
   }
