@@ -89,7 +89,7 @@ h4 {
 }
 
 .prices {
-  background-image: url("../assets/placeholders/brickWall-l-1.jpg");
+  background-image: url("../assets/placeholders/white-background-3.jpg");
 }
 
 .package__card {

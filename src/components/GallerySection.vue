@@ -20,7 +20,7 @@
         <div class="overlay sm:hidden"/>
         <div class="card__title dancing-script"><h4>Family</h4></div>
         <div class="image__card">
-          <img src="../assets/placeholders/download/P10002260075.jpg" alt="" class="relative -top-5">
+          <img src="../assets/placeholders/download/P10002260083.jpg" alt="" class="relative -top-5">
         </div>
       </div>
       <div class="image__card__holder" @click="goToCollection('portraits')">
@@ -75,7 +75,9 @@ h2 {
 }
 
 .gallery {
-  background-image: url("../assets/placeholders/brickWall-l-1.jpg");
+  background-image: url("../assets/placeholders/leaf-background-1.jpg");
+  background-repeat: repeat;
+  background-size: 200px;
 }
 
 .gallery__list {
