@@ -162,7 +162,7 @@ export default {
     height: 30rem;
   }
   .image__card__holder .card__title {
-    @apply text-5xl relative h-auto pb-4;
+    @apply relative h-auto pb-4;
     color: var(--default-blue)
   }
   .image__card {
