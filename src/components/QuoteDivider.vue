@@ -1,5 +1,5 @@
 <template>
-  <div class="parallax__divider flex items-center justify-center h-1/3 md:h-1/4 w-full" :class="extraClasses">
+  <div class="parallax__divider flex items-center justify-center h-1/4 w-full" :class="extraClasses">
     <h2 class="text-white text-2xl dancing-script">{{ quote }}</h2>
   </div>
 </template>

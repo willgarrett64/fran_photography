@@ -40,18 +40,13 @@ export default {
 
 <style>
 .test {
-  @apply h-1/2;
+  @apply h-2/3;
   background-image: url("../assets/placeholders/download/P10002260074.jpg");
 }
 
 .test2 {
   @apply h-4/5;
   background-image: url("../assets/placeholders/download/anna-clara-hair.jpeg");
-}
-
-.parallax__divider {
-  @apply flex items-center justify-center h-1/3 w-full;
-  background-color: var(--fran-blue);
 }
 
 @screen md {
