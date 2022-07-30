@@ -2,7 +2,7 @@
   <section class="cover relative">
     <div class="parallax splash"></div>
     <div class="title">
-      <img src="../assets/FranPhotographyLogo.jpeg" alt="logo" srcset="" class="hidden md:block h-64">
+      <img src="../assets/fran-logo-white.png" alt="logo" srcset="" class="hidden md:block h-80">
       <h1 class="header tangerine">Capturando o que é invisível aos olhos.</h1>
       <h2 class="hidden sub-header">Give me money and I will take your photo.</h2>
     </div>

@@ -1,7 +1,7 @@
 <template>
   <nav class="fixed top-0 left-0 h-screen w-screen bg-white z-50 px-6 py-6 overflow-hidden">
     <div class="flex justify-between items-center h-28">
-      <router-link to="/"><img src="../assets/FranPhotographyLogo.jpeg" alt="logo" srcset="" class="h-28"></router-link>
+      <router-link to="/"><img src="../assets/fran-logo-colours.png" alt="logo" srcset="" class="h-28"></router-link>
       <svg @click="toggleMenu" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
       </svg>

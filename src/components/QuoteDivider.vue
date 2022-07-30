@@ -1,6 +1,6 @@
 <template>
   <div class="parallax__divider flex items-center justify-center h-1/4 w-full" :class="extraClasses">
-    <h2 class="text-white text-2xl dancing-script">{{ quote }}</h2>
+    <h2 class="text-2xl dancing-script">{{ quote }}</h2>
   </div>
 </template>
 
@@ -11,8 +11,12 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .parallax__divider {
   background-color: var(--fran-blue);
+}
+
+.parallax__divider h2 {
+  color: var(--default-blue);
 }
 </style>

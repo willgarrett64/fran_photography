@@ -39,13 +39,14 @@ export default {
             name: 'landscape-1.jpg',
             class: 'landscape'
           },
-          {
-            name: 'portrait-2.jpg',
-            class: 'portrait'
-          },
+
           {
             name: 'landscape-2.jpg',
             class: 'landscape'
+          },
+          {
+            name: 'portrait-2.jpg',
+            class: 'portrait'
           },
           {
             name: 'landscape-3.jpg',
@@ -144,7 +145,7 @@ export default {
 
 <style>
 .gallery__collection {
-  @apply grid grid-cols-2 gap-2 p-2
+  @apply grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-4 px-2 md:px-4
 }
 
 .gallery__collection img {

@@ -24,7 +24,7 @@ export default {
 }
 
 .about {
-  background-color: var(--fran-blue);
+  background-color: var(--default-blue);
 }
 
 @screen sm {
