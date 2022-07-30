@@ -156,7 +156,7 @@ export default {
 }
 
 .prices__content {
-  @apply flex flex-col justify-between items-center py-20;
+  @apply flex flex-col justify-between items-center pt-8 pb-12;
   height: calc(100vh - 108px);
 }
 
