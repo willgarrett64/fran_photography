@@ -11,7 +11,41 @@
       <li class="dosis" @click="scrollTo('gallery')">Gallery</li>
       <li class="dosis" @click="scrollTo('prices')">Prices</li>
       <li class="dosis" @click="scrollTo('contact')">Contact</li>
-      <li class="dosis hidden"><a>EN | DE | BR</a></li>
+      <Listbox v-model="language">
+        <div class="relative">
+          <ListboxButton class="listButton">
+            <img :src="getSrc(language)" alt="flag" srcset="" class="h-4"><ChevronDownIcon class="w-4" />
+          </ListboxButton>
+          <transition
+            leave-active-class="transition duration-100 ease-in"
+            leave-from-class="opacity-100"
+            leave-to-class="opacity-0"
+          >
+            <ListboxOptions class="listOptions">
+              <ListboxOption
+                as="template"
+                v-slot="{ active, selected }"
+                v-for="language in languages"
+                :key="language.name"
+                :value="language"
+              >
+                <li
+                  class="listOption"
+                  :class="{
+                    'selected': selected,
+                    'active': active,
+                  }"
+                >
+                  <div class="flex items-center">
+                    <img :src="getSrc(language)" alt="flag" srcset="" class="h-4 mr-1">
+                    {{ language.name }}
+                  </div>
+                </li>
+              </ListboxOption>
+            </ListboxOptions>
+          </transition>
+        </div>
+      </Listbox>
     </ul>
   </nav>
   <NavbarMenu v-if="showMenu" :toggleMenu="toggleMenu" />
@@ -19,18 +53,55 @@
 
 <script>
 import NavbarMenu from './NavbarMenu.vue'
+import { ChevronDownIcon } from '@heroicons/vue/solid'
+import {
+  Listbox,
+  ListboxButton,
+  ListboxOptions,
+  ListboxOption
+} from '@headlessui/vue'
 
 export default {
   name: 'Navbar',
   data() {
     return {
+      language: {
+        name: 'Português',
+        code: 'pt',
+        image: 'brazil-flag.png'
+      },
+      languages: [
+        {
+          name: 'Deutsch',
+          code: 'de',
+          image: 'germany-flag.png'
+        },
+        {
+          name: 'English',
+          code: 'en',
+          image: 'uk-flag.png'
+        },
+        {
+          name: 'Português',
+          code: 'pt',
+          image: 'brazil-flag.png'
+        }
+      ],
       showMenu: false
     }
   },
   components: {
+    ChevronDownIcon,
+    Listbox,
+    ListboxButton,
+    ListboxOptions,
+    ListboxOption,
     NavbarMenu
   },
   methods: {
+    getSrc(language) {
+      return require(`../assets/flags/${language.image}`)
+    },
     scrollTo(elementId) {
       this.toggleMenu()
       document.getElementById(elementId).scrollIntoView({
@@ -64,7 +135,7 @@ export default {
 }
 
 .navbar__menu_desktop {
-  @apply hidden md:flex space-x-8 mr-4;
+  @apply hidden md:flex items-center space-x-8 mr-4;
 }
 
 .navbar__menu_desktop li {
@@ -74,5 +145,19 @@ export default {
 
 .navbar__menu_desktop li:hover {
   color: var(--fran-blue-dark);
+}
+
+.listButton {
+  @apply capitalize relative w-max flex items-center space-x-1 cursor-pointer;
+}
+.listOptions {
+  @apply absolute z-10 w-max py-1 mt-1 rounded-md shadow-lg focus:outline-none shadow-none;
+}
+li.listOption {
+  @apply relative flex items-center justify-between bg-transparent cursor-pointer py-2 cursor-default select-none;
+  font-size: 1rem;
+}
+li.listOption.active, li.listOption.selected {
+  color: var(--fran-blue-medium);
 }
 </style>

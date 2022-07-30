@@ -40,7 +40,7 @@ export default {
 
 @screen md {
   .splash {
-    background-image: url("../assets/placeholders/download/P10002260086.jpg")
+    background-image: url("../assets/placeholders/download/P10002260086.jpg");
   }
 
   .title {
