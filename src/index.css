@@ -4,6 +4,7 @@
   --fran-blue-dark: rgb(77, 152, 121);
   --fran-blue-medium: rgb(139, 186, 166);
   --fran-blue-transparent: rgba(175, 203, 190, 0.70);
+  --swiper-theme-color: rgb(139, 186, 166);
 }
 
 html {
