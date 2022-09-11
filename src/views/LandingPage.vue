@@ -34,6 +34,12 @@ export default {
     SplashSection,
     PricesSection,
     QuoteDivider
+  },
+  mounted() {
+    const elementId = this.$route.hash && this.$route.hash.slice(1)
+    setTimeout(() => {
+      if (elementId) document.getElementById(elementId).scrollIntoView()
+    }, 0)
   }
 }
 </script>

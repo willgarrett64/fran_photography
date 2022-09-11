@@ -113,9 +113,10 @@ export default {
     onWindowResize() {
       this.windowWidth = window.innerWidth
     },
-    scrollTo(elementId) {
+    async scrollTo(elementId) {
       this.toggleMenu()
-      document.getElementById(elementId).scrollIntoView({
+      if (this.$route.name !== 'LandingPage') await this.$router.push({ name: 'LandingPage', hash: `#${elementId}` })
+      else document.getElementById(elementId).scrollIntoView({
         behavior: 'smooth'
       })
     },
