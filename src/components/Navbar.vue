@@ -7,45 +7,47 @@
       <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
     </svg>
     <ul class="navbar__menu_desktop">
-      <li class="dosis" @click="scrollTo('about')">About</li>
-      <li class="dosis" @click="scrollTo('gallery')">Gallery</li>
-      <li class="dosis" @click="scrollTo('prices')">Prices</li>
-      <li class="dosis" @click="scrollTo('contact')">Contact</li>
-      <Listbox v-model="language">
-        <div class="relative">
-          <ListboxButton class="listButton">
-            <img :src="getSrc(language)" alt="flag" srcset="" class="h-4"><ChevronDownIcon class="w-4" />
-          </ListboxButton>
-          <transition
-            leave-active-class="transition duration-100 ease-in"
-            leave-from-class="opacity-100"
-            leave-to-class="opacity-0"
-          >
-            <ListboxOptions class="listOptions">
-              <ListboxOption
-                as="template"
-                v-slot="{ active, selected }"
-                v-for="language in languages"
-                :key="language.name"
-                :value="language"
-              >
-                <li
-                  class="listOption"
-                  :class="{
-                    'selected': selected,
-                    'active': active,
-                  }"
+      <li class="dosis" @click="scrollTo('about')">Sobre</li>
+      <li class="dosis" @click="scrollTo('gallery')">Portfólio</li>
+      <li class="dosis" @click="scrollTo('prices')">Pacotes</li>
+      <li class="dosis" @click="scrollTo('contact')">Contato</li>
+      <div class="relative">
+        <Listbox v-model="language">
+          <div class="relative">
+            <ListboxButton class="listButton">
+              <img :src="getSrc(language)" alt="flag" srcset="" class="h-4"><ChevronDownIcon class="w-4" />
+            </ListboxButton>
+            <transition
+              leave-active-class="transition duration-100 ease-in"
+              leave-from-class="opacity-100"
+              leave-to-class="opacity-0"
+            >
+              <ListboxOptions class="listOptions">
+                <ListboxOption
+                  as="template"
+                  v-slot="{ active, selected }"
+                  v-for="language in languages"
+                  :key="language.name"
+                  :value="language"
                 >
-                  <div class="flex items-center">
-                    <img :src="getSrc(language)" alt="flag" srcset="" class="h-4 mr-1">
-                    {{ language.name }}
-                  </div>
-                </li>
-              </ListboxOption>
-            </ListboxOptions>
-          </transition>
-        </div>
-      </Listbox>
+                  <li
+                    class="listOption"
+                    :class="{
+                      'selected': selected,
+                      'active': active,
+                    }"
+                  >
+                    <div class="flex items-center">
+                      {{ language.name }}
+                      <img :src="getSrc(language)" alt="flag" srcset="" class="h-4 ml-1">
+                    </div>
+                  </li>
+                </ListboxOption>
+              </ListboxOptions>
+            </transition>
+          </div>
+        </Listbox>
+      </div>
     </ul>
   </nav>
   <NavbarMenu v-if="showMenu" :toggleMenu="toggleMenu" />
@@ -87,7 +89,13 @@ export default {
           image: 'brazil-flag.png'
         }
       ],
-      showMenu: false
+      showMenu: false,
+      windowWidth: window.innerWidth
+    }
+  },
+  computed: {
+    md() {
+      return this.windowWidth >= 768
     }
   },
   components: {
@@ -102,6 +110,9 @@ export default {
     getSrc(language) {
       return require(`../assets/flags/${language.image}`)
     },
+    onWindowResize() {
+      this.windowWidth = window.innerWidth
+    },
     scrollTo(elementId) {
       this.toggleMenu()
       document.getElementById(elementId).scrollIntoView({
@@ -109,8 +120,14 @@ export default {
       })
     },
     toggleMenu() {
-      this.showMenu = !this.showMenu
+      if (!this.md) this.showMenu = !this.showMenu
     }
+  },
+  mounted() {
+    window.addEventListener('resize', this.onWindowResize)
+  },
+  unmounted() {
+    window.removeEventListener('resize', this.onWindowResize)
   }
   // mounted() {
   //   let prevScrollpos = window.pageYOffset;
@@ -151,10 +168,10 @@ export default {
   @apply capitalize relative w-max flex items-center space-x-1 cursor-pointer;
 }
 .listOptions {
-  @apply absolute z-10 w-max py-1 mt-1 rounded-md shadow-lg focus:outline-none shadow-none;
+  @apply absolute right-5 z-10 w-max py-1 mt-1 rounded-md shadow-lg focus:outline-none shadow-none;
 }
 li.listOption {
-  @apply relative flex items-center justify-between bg-transparent cursor-pointer py-2 cursor-default select-none;
+  @apply relative flex items-center justify-end bg-transparent cursor-pointer py-2 cursor-default select-none;
   font-size: 1rem;
 }
 li.listOption.active, li.listOption.selected {

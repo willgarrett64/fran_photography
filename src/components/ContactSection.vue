@@ -5,11 +5,15 @@
         <span class="name text-2xl">Francine Martello</span>
         <div class="flex items-center justify-center">
           <div class="mr-2"><PhoneIcon class="w-5" /></div>
-          <span>01234 567891</span>
+          <span>+49 15752473422</span>
         </div>
         <div class="flex items-center justify-center">
           <div class="mr-2"><MailIcon class="w-5" /></div>
           <span>martellofrancine@gmail.com</span>
+        </div>
+        <div class="flex items-center justify-center">
+          <div class="mr-2"><LocationMarkerIcon class="w-5" /></div>
+          <span>Kemptenerstraße 66, 87600 Kaufbeuren</span>
         </div>
         <div class="social__icons">
           <!-- facebook link -->
@@ -26,14 +30,14 @@
 </template>
 
 <script>
-import { MailIcon, PhoneIcon } from '@heroicons/vue/solid'
-
+import { LocationMarkerIcon, MailIcon, PhoneIcon } from '@heroicons/vue/solid'
 
 export default {
   name: 'ContactSection',
   components: {
-    PhoneIcon,
-    MailIcon
+    LocationMarkerIcon,
+    MailIcon,
+    PhoneIcon
   }
 }
 </script>

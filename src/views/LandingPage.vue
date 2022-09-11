@@ -1,17 +1,17 @@
 <template>
   <div class="h-full">
     <SplashSection />
-    <QuoteDivider quote="Some interesting quote will go here" extraClasses="hidden md:flex" />
+    <QuoteDivider quote="" extraClasses="hidden md:flex" />
     <AboutMe />
-    <QuoteDivider quote="Some interesting quote will go here" />
-    <div class="parallax test"></div>
-    <QuoteDivider quote="Some interesting quote will go here" />
+    <QuoteDivider quote="" />
+    <div class="parallax photo1"></div>
+    <QuoteDivider quote="" />
     <GallerySection />
-    <QuoteDivider quote="Some interesting quote will go here" />
-    <div class="parallax test2"></div>
-    <QuoteDivider quote="Some interesting quote will go here" />
+    <QuoteDivider quote="" />
+    <div class="parallax photo2"></div>
+    <QuoteDivider quote="" />
     <PricesSection />
-    <QuoteDivider quote="Some interesting quote will go here" extraClasses="md:hidden" />
+    <QuoteDivider quote="" extraClasses="md:hidden" />
     <ContactSection />
   </div>
 </template>
@@ -39,25 +39,25 @@ export default {
 </script>
 
 <style>
-.test {
+.photo1 {
   @apply h-2/3;
   background-image: url("../assets/placeholders/download/P10002260074.jpg");
 }
 
-.test2 {
+.photo2 {
   @apply h-4/5;
   background-image: url("../assets/placeholders/download/anna-clara-hair.jpeg");
 }
 
 @screen md {
-  .test {
+  .photo1 {
     @apply h-4/5;
     background-image: url("../assets/placeholders/download/P10002260069.jpg");
     background-position-x: 50%;
   }
 
   .parallax__divider {
-    @apply h-1/4;
+    @apply h-1/6;
   }
 }
 </style>

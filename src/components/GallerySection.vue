@@ -2,17 +2,17 @@
   <section class="cover relative parallax gallery h-screen" id="gallery">
     <div class="title">
       <div class="title__decoration"></div>
-      <h2 class="arima">Gallery</h2>
+      <h2 class="arima">Portfólio</h2>
       <div class="title__decoration"></div>
     </div>
 
     <div>
       <div class="gallery__list">
         <div class="image__card__holder" @click="goToCollection('pregnancy')">
-          <div class="card__title dancing-script"><h4>Pregnancy</h4></div>
+          <div class="card__title dancing-script"><h4>Gestante</h4></div>
           <div class="image__card">
             <div class="image__overlay">
-              <span class="px-1 hidden ibarra">I really love taking pregnancy photos. It's why I started photography.</span>
+              <span class="px-1 hidden ibarra">A gestação é o momento de plenitude de uma mulher, onde meu amor pela fotografia nasceu!</span>
             </div>
             <img src="../assets/placeholders/download/P10002260090.jpg" alt="">
           </div>
@@ -21,25 +21,25 @@
           <div class="card__title dancing-script"><h4>Newborn</h4></div>
           <div class="image__card">
             <div class="image__overlay">
-              <span class="px-1 hidden ibarra">I really love taking pregnancy photos. It's why I started photography.</span>
+              <span class="px-1 hidden ibarra">Poder registrar os primeiros detalhes da pessoa mais importante de nossas vida, nosso filho, nosso pacotinho...</span>
             </div>
             <img src="../assets/placeholders/download/P10002260084.jpg" alt="">
           </div>
         </div>
         <div class="image__card__holder" @click="goToCollection('family')">
-          <div class="card__title dancing-script"><h4>Family</h4></div>
+          <div class="card__title dancing-script"><h4>Família</h4></div>
           <div class="image__card">
             <div class="image__overlay">
-              <span class="px-1 hidden ibarra">I really love taking pregnancy photos. It's why I started photography.</span>
+              <span class="px-1 hidden ibarra">O momento de felicidade é em cada olhar, cada sorriso... a fotografia pode registrar em segundos!</span>
             </div>
             <img src="../assets/placeholders/download/P10002260083.jpg" alt="">
           </div>
         </div>
         <div class="image__card__holder" @click="goToCollection('portraits')">
-          <div class="card__title dancing-script"><h4>Portraits</h4></div>
+          <div class="card__title dancing-script"><h4>Portrait</h4></div>
           <div class="image__card">
             <div class="image__overlay">
-              <span class="px-1 hidden ibarra">I really love taking pregnancy photos. It's why I started photography.</span>
+              <span class="px-1 hidden ibarra">O olhar, a composição, luz... e o seu momento!</span>
             </div>
             <img src="../assets/placeholders/download/P10002260074.jpg" alt="">
           </div>

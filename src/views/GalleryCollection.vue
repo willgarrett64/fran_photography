@@ -1,12 +1,12 @@
 <template>
-  <div class="h-full mt-44">
+  <div class="h-full mt-32">
     <div class="flex justify-between mx-4 mb-4 items-center">
       <button @click="goTo(prevCollection)">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="#000" stroke-width="1.5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
         </svg>
       </button>
-      <h2 class="capitalize text-4xl dancing-script">{{ collectionName }}</h2>
+      <h2 class="capitalize text-4xl dancing-script">{{ collectionTitle }}</h2>
       <button @click="goTo(nextCollection)">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="#000" stroke-width="1.5">
           <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -120,6 +120,20 @@ export default {
     collectionName() {
       return this.$route.params.collection
     },
+    collectionTitle() {
+      switch (this.collectionName) {
+        case 'pregnancy':
+          return 'Gestante'
+        case 'newborn':
+          return 'Newborn'
+        case 'family':
+          return 'Família'
+        case 'portraits':
+          return 'Portrait'
+        default:
+          return null
+      }
+    },
     collectionNames() {
       return Object.keys(this.collections)
     },
@@ -145,11 +159,11 @@ export default {
 
 <style>
 .gallery__collection {
-  @apply grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-4 px-2 md:px-4
+  @apply grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-4 px-2 md:px-4 pb-10
 }
 
 .gallery__collection img {
-  @apply h-full object-cover rounded;
+  @apply h-full object-cover rounded cursor-pointer;
 }
 
 .gallery__collection .portrait {

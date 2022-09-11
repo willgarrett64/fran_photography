@@ -8,10 +8,10 @@
     </div>
     <ul class="navbar__menu">
       <li class="ibarra" @click="toggleMenu"><router-link to="/">Home</router-link></li>
-      <li class="ibarra" @click="scrollTo('about')">About</li>
-      <li class="ibarra" @click="scrollTo('gallery')">Gallery</li>
-      <li class="ibarra" @click="scrollTo('prices')">Prices</li>
-      <li class="ibarra" @click="scrollTo('contact')">Contact</li>
+      <li class="ibarra" @click="scrollTo('about')">Sobre</li>
+      <li class="ibarra" @click="scrollTo('gallery')">Portfólio</li>
+      <li class="ibarra" @click="scrollTo('prices')">Pactoes</li>
+      <li class="ibarra" @click="scrollTo('contact')">Contato</li>
       <li class="ibarra hidden"><a>EN | DE | BR</a></li>
     </ul>
   </nav>

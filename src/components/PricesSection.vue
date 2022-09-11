@@ -2,7 +2,7 @@
   <section class="cover relative prices parallax" id="prices">
     <div class="title">
       <div class="title__decoration"></div>
-      <h2 class="arima">Prices</h2>
+      <h2 class="arima">Pacotes</h2>
       <div class="title__decoration"></div>
     </div>
     <div class="prices__content">
@@ -24,56 +24,59 @@
         >
           <SwiperSlide class="slide">
             <div class="package__wrapper">
-              <h4 class="package__title dancing-script mb-2">Package 1</h4>
+              <h4 class="package__title dancing-script mb-2">Gestante</h4>
               <div class="package__card">
                 <div class="h-1/2 w-full"><img src="../assets/placeholders/download/computer-editing.jpeg" alt="" srcset=""></div>
                 <div class="package__details">
                   <ul>
-                    <li>Photoshoot (1 hour)</li>
-                    <li>20 digital photos</li>
-                    <li>5 printed photos</li>
+                    <li>Photoshoot (50min)</li>
+                    <li>18 fotos digitáis</li>
+                    <li>10 fotos impressas</li>
+                    <li>Confecção de livro a combinar</li>
                   </ul>
-                  <span class="package__price">€120</span>
+                  <span class="package__price">€190</span>
                 </div>
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide class="slide">
             <div class="package__wrapper">
-              <h4 class="package__title dancing-script mb-2">Package 2</h4>
+              <h4 class="package__title dancing-script mb-2">Newborn</h4>
               <div class="package__card">
                 <div class="h-1/2 w-full"><img src="../assets/placeholders/prices-l-2.jpg" alt="" srcset=""></div>
                 <div class="package__details">
                   <ul>
-                    <li>Photoshoot (2 hours)</li>
-                    <li>50 digital photos</li>
-                    <li>20 printed photos</li>
+                    <li>Photoshoot (1,5h)</li>
+                    <li>18 fotos digitáis</li>
+                    <li>10 fotos impressas</li>
+                    <li>Confecção de livro a combinar</li>
                   </ul>
-                  <span class="package__price">€160</span>
+                  <span class="package__price">€210</span>
                 </div>
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide class="slide">
             <div class="package__wrapper">
-              <h4 class="package__title dancing-script mb-2">Package 3</h4>
+              <h4 class="package__title dancing-script mb-2">Família</h4>
               <div class="package__card">
                 <div class="h-1/2 w-full"><img src="../assets/placeholders/prices-l-3.jpg" alt="" srcset=""></div>
                 <div class="package__details">
                   <ul>
-                    <li>Photoshoot (2 hours)</li>
-                    <li>All digital photos</li>
-                    <li>50 printed photos</li>
-                    <li>Photo album</li>
+                    <li>Photoshoot (1h)</li>
+                    <li>Com até 5 pessoas</li>
+                    <li>18 fotos digitáis</li>
+                    <li>10 fotos impressas</li>
+                    <li>Confecção de livro a combinar</li>
                   </ul>
-                  <span class="package__price">€220</span>
+                  <span class="package__price">€210</span>
                 </div>
               </div>
             </div>
           </SwiperSlide>
         </Swiper>
       </div>
-      <button class="dosis w-max text-xl lg:text-2xl underline hover:text-red-500">Create your own package</button>
+      <!-- <button class="dosis w-max text-xl lg:text-2xl underline hover:text-red-500">Create your own package</button> -->
     </div>
   </section>
 </template>
@@ -181,11 +184,11 @@ export default {
   @apply text-3xl;
 }
 .package__card .package__details {
-  @apply text-lg flex flex-col h-1/2 justify-between text-black text-left z-20;
+  @apply flex flex-col h-1/2 justify-between text-black text-left z-20;
   font-family: 'arima';
 }
 .package__card ul {
-  @apply ml-5 px-4 pt-8;
+  @apply ml-5 px-4 pt-4;
 }
 .package__card li {
   list-style-type: circle;
