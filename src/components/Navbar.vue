@@ -7,10 +7,22 @@
       <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
     </svg>
     <ul class="navbar__menu_desktop">
-      <li class="dosis" @click="scrollTo('about')">Sobre</li>
-      <li class="dosis" @click="scrollTo('gallery')">Portfólio</li>
-      <li class="dosis" @click="scrollTo('prices')">Pacotes</li>
-      <li class="dosis" @click="scrollTo('contact')">Contato</li>
+      <li @click="scrollTo('about')">Sobre</li>
+      <!-- <li @click="scrollTo('gallery')">Portfólio</li> -->
+      <li >
+        <router-link :to="{ name: 'WorkPage', params: { work:'pregnancy' } }">Gestante</router-link>
+      </li>
+      <li >
+        <router-link :to="{ name: 'WorkPage', params: { work:'newborn' } }">Newborn</router-link>
+      </li>
+      <li >
+        <router-link :to="{ name: 'WorkPage', params: { work:'family' } }">Família</router-link>
+      </li>
+      <li >
+        <router-link :to="{ name: 'WorkPage', params: { work:'portraits' } }">Portrait</router-link>
+      </li>
+
+      <li @click="scrollTo('contact')">Contato</li>
       <div class="relative">
         <Listbox v-model="language">
           <div class="relative">

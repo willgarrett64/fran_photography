@@ -9,8 +9,6 @@
     <GallerySection />
     <QuoteDivider quote="" />
     <div class="parallax photo2"></div>
-    <QuoteDivider quote="" />
-    <PricesSection />
     <QuoteDivider quote="" extraClasses="md:hidden" />
     <ContactSection />
   </div>
@@ -22,7 +20,6 @@ import AboutMe from '@/components/AboutMe.vue'
 import ContactSection from '@/components/ContactSection.vue'
 import GallerySection from '@/components/GallerySection.vue'
 import SplashSection from '@/components/SplashSection.vue'
-import PricesSection from '@/components/PricesSection.vue'
 import QuoteDivider from '@/components/QuoteDivider.vue'
 
 export default {
@@ -32,7 +29,6 @@ export default {
     ContactSection,
     GallerySection,
     SplashSection,
-    PricesSection,
     QuoteDivider
   },
   mounted() {

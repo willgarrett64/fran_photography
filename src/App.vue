@@ -1,7 +1,7 @@
 <template>
   <div class="h-screen">
     <Navbar />
-    <body class="h-full ">
+    <body class="h-full">
       <router-view />
     </body>
   </div>

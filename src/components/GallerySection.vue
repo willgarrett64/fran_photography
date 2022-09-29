@@ -2,7 +2,7 @@
   <section class="cover relative parallax gallery h-screen" id="gallery">
     <div class="title">
       <div class="title__decoration"></div>
-      <h2 class="arima">Portfólio</h2>
+      <h2 class="arima">Trabalho</h2>
       <div class="title__decoration"></div>
     </div>
 
@@ -57,7 +57,7 @@ export default {
   },
   methods: {
     goToCollection(collection) {
-      this.$router.push(`/gallery/${collection}`)
+      this.$router.push({ name: 'WorkPage', params: { work: collection } })
     }
   }
 }

@@ -1,5 +1,5 @@
 import LandingPage from '@/views/LandingPage'
-import GalleryCollection from '@/views/GalleryCollection'
+import WorkPage from '@/views/WorkPage'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
@@ -9,9 +9,9 @@ const routes = [
     component: LandingPage
   },
   {
-    path: '/gallery/:collection',
-    name: 'Gallery',
-    component: GalleryCollection
+    path: '/:work',
+    name: 'WorkPage',
+    component: WorkPage
   }
 ]
 
