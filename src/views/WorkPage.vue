@@ -20,35 +20,6 @@
             :class="image.class"
           />
         </div>
-        <div class="flex flex-col space-y-2">
-          <Disclosure v-slot="{ open }">
-            <DisclosureButton class="disclosure__button">
-              Investimento
-              <ChevronRightIcon class="chevron w-5" :class="open && 'rotate-90 transform'"/>
-            </DisclosureButton>
-            <DisclosurePanel class="disclosure__panel">
-              Yes! You can purchase a license that you can share with your entire team.
-            </DisclosurePanel>
-          </Disclosure>
-          <Disclosure v-slot="{ open }">
-            <DisclosureButton class="disclosure__button">
-              Pagamento
-              <ChevronRightIcon class="chevron w-5" :class="open && 'rotate-90 transform'"/>
-            </DisclosureButton>
-            <DisclosurePanel class="disclosure__panel">
-              Yes! You can purchase a license that you can share with your entire team.
-            </DisclosurePanel>
-          </Disclosure>
-          <Disclosure v-slot="{ open }">
-            <DisclosureButton class="disclosure__button">
-              Dúvidas
-              <ChevronRightIcon class="chevron w-5" :class="open && 'rotate-90 transform'"/>
-            </DisclosureButton>
-            <DisclosurePanel class="disclosure__panel">
-              Yes! You can purchase a license that you can share with your entire team.
-            </DisclosurePanel>
-          </Disclosure>
-        </div>
       </div>
     </div>
     <ContactSection />
@@ -57,22 +28,12 @@
 
 <script>
 import ContactSection from '@/components/ContactSection.vue'
-import { ChevronRightIcon } from '@heroicons/vue/solid'
-import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel
-} from '@headlessui/vue'
 
 export default {
   name: 'WorkPage',
   props: ['title'],
   components: {
-    ContactSection,
-    ChevronRightIcon,
-    Disclosure,
-    DisclosureButton,
-    DisclosurePanel
+    ContactSection
   },
   data() {
     return {
@@ -207,16 +168,5 @@ export default {
 
 .gallery__collection .full-width {
   @apply col-span-2
-}
-
-.disclosure__button {
-  @apply w-full flex relative items-center justify-center text-xl px-4 py-2 rounded-lg;
-  background-color: var(--fran-blue);
-}
-.disclosure__button .chevron {
-  @apply w-5 absolute right-5
-}
-.disclosure__panel {
-  @apply text-lg py-2
 }
 </style>

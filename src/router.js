@@ -1,3 +1,4 @@
+import FaqsPage from '@/views/FaqsPage'
 import LandingPage from '@/views/LandingPage'
 import WorkPage from '@/views/WorkPage'
 import { createRouter, createWebHistory } from 'vue-router'
@@ -12,6 +13,11 @@ const routes = [
     path: '/:work',
     name: 'WorkPage',
     component: WorkPage
+  },
+  {
+    path: '/faqs',
+    name: 'FaqsPage',
+    component: FaqsPage
   }
 ]
 

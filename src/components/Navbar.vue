@@ -21,6 +21,10 @@
       <li >
         <router-link :to="{ name: 'WorkPage', params: { work:'portraits' } }">Portrait</router-link>
       </li>
+      <!-- FAQs -->
+      <li >
+        <router-link :to="{ name: 'FaqsPage' }">Dúvidas</router-link>
+      </li>
 
       <li @click="scrollTo('contact')">Contato</li>
       <div class="relative">

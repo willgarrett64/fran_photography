@@ -1,0 +1,187 @@
+<template>
+  <div class="mt-32 mb-20">
+    <div class="title">
+      <div class="title__decoration"></div>
+      <h2 class="arima">Dúvidas</h2>
+      <div class="title__decoration"></div>
+    </div>
+    <div>
+      <!-- tabs -->
+      <div>
+        <span
+          @click="selectTab('general')"
+          class="tab"
+          :class="selected === 'general' ? 'selected' : ''"
+        >
+          Gerais
+        </span>
+        <span
+          @click="selectTab('pregnancy')"
+          class="tab"
+          :class="selected === 'pregnancy' ? 'selected' : ''"
+        >
+          Gestantes
+        </span>
+        <span
+          @click="selectTab('newborn')"
+          class="tab"
+          :class="selected === 'newborn' ? 'selected' : ''"
+        >
+          Newborn
+        </span>
+        <span
+          @click="selectTab('family')"
+          class="tab"
+          :class="selected === 'family' ? 'selected' : ''"
+        >
+          Família
+        </span>
+        <span
+          @click="selectTab('portrait')"
+          class="tab"
+          :class="selected === 'portrait' ? 'selected' : ''"
+        >
+          Portrait
+        </span>
+      </div>
+      <!-- faqs -->
+      <div class="max-w-5xl m-auto">
+        <div class="mt-8 flex flex-col space-y-2">
+          <Disclosure
+            v-slot="{ open }"
+            v-for="faq in faqs[selected]"
+            :key=faq.q
+          >
+            <DisclosureButton class="disclosure__button">
+              <span>{{ faq.q }}</span>
+              <ChevronRightIcon class="chevron w-5" :class="open && 'rotate-90 transform'"/>
+            </DisclosureButton>
+            <transition
+              enter-active-class="transition duration-100 ease-out"
+              enter-from-class="transform scale-95 opacity-0"
+              enter-to-class="transform scale-100 opacity-100"
+              leave-active-class="transition duration-75 ease-out"
+              leave-from-class="transform scale-100 opacity-100"
+              leave-to-class="transform scale-95 opacity-0"
+            >
+              <DisclosurePanel class="disclosure__panel">
+                <span>{{ faq.a }}</span>
+              </DisclosurePanel>
+            </transition>
+          </Disclosure>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import { ChevronRightIcon } from '@heroicons/vue/solid'
+import {
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel
+} from '@headlessui/vue'
+
+export default {
+  name: 'FaqsPage',
+  components: {
+    ChevronRightIcon,
+    Disclosure,
+    DisclosureButton,
+    DisclosurePanel
+  },
+  data() {
+    return {
+      faqs: {
+        general: [
+          {
+            q: "Where can we do the photoshoot?",
+            a: "The photoshoot can be done anywhere you like. Personally I love taking working outside, using nature as the perfect backdrop to your photos. However, if you prefer to have indoor shots, I recommend using the comfort of your own home as this will help you relax and get the best natural photos. Alternatively, I am happy to offer my own personal studio in my house. I am happy to discuss all the options with you."
+          },
+          {
+            q: "How many photos will I receive?",
+            a: "This depends on your package. My standard package is to deliver 50 digital photos and 15 printed photos, however we can of course discuss if you want more or less."
+          },
+          {
+            q: "How long does it take to receive my pictures?",
+            a: "I pride myself in the post-production stage of my work. This involves selecting the best photos from the shoot, editing the photos such as correcting lighting, and preparing them all to deliver to you. This normally takes about 2-3 weeks after the day of the shoot"
+          }
+        ],
+        pregnancy: [
+          {
+            q: "What is the best stage of pregnancy to do the photos?",
+            a: "My recommendation is to wait until at least 26 weeks so we can capture your beautiful bump in all its glory. Id also recommend booking your photoshoot before the 38th week because things can get a little uncomfortable towards the end. At the end of the day though, all stages of pregnancy are beautiful and I just want to capture this magical moment in your life"
+          },
+          {
+            q: "Can I bring my partner?",
+            a: "Of course you can! Whilst pregnancy is a special moment in the life of every woman, it's also a moment we share with our partners, so I encourage them to take part in the photoshoot."
+          },
+          {
+            q: "What shall I wear?",
+            a: "Whatever you feel comfortable in. Something tight works well as it really shows off your belly, however if you want some shots in just lingerie, or with your bump out, that's absolutely fine. Sometimes bringing two or three outfits is a good idea to get a variety of photos."
+          }
+        ],
+        newborn: [
+          {
+            q: "What age can I take newborn photos until?",
+            a: "Whislt I call them 'newborn' photos, in fact I am happy to take photos of your little one until they older. When they start crawling and walking however, I recommend the family package because this includes a longer photoshoot which, trust me, is necessary to get a decent number of quality photos.."
+          },
+          {
+            q: "Do you put my baby in poses?",
+            a: "My style is to capture moments naturally, so I tend to avoid putting the baby in specific positions for photos. However, if there is something you'd particularly like, just let me know. My request however is that you're the one who poses your child as you know them best and they will be most comfortable with you."
+          }
+        ],
+        family: [
+          {
+            q: "How many family members can I bring?",
+            a: "The family shoot includes up to 5 people. It's possible to bring more, however there is an extra charge because with more people, this inevitibly requires more time in the photoshoot to get the necessary number of photos of all of your loved ones."
+          },
+          {
+            q: "Where can we do the photoshoot?",
+            a: "The photoshoot can be done anywhere you like. Personally I love taking working outside, using nature as the perfect backdrop to your photos. However, if you prefer to have indoor shots, I recommend using the comfort of your own home as this will help you relax and get the best natural photos. Alternatively, I am happy to offer my own personal studio in my house. I am happy to discuss all the options with you."
+          }
+        ],
+        portrait: [
+          {
+            q: "Where can we do the photoshoot?",
+            a: "The photoshoot can be done anywhere you like. Personally I love taking working outside, using nature as the perfect backdrop to your photos. However, if you prefer to have indoor shots, I recommend using the comfort of your own home as this will help you relax and get the best natural photos. Alternatively, I am happy to offer my own personal studio in my house. I am happy to discuss all the options with you."
+          }
+        ]
+      },
+      selected: 'general'
+    }
+  },
+  methods: {
+    selectTab(tab) {
+      this.selected = tab
+    }
+  }
+}
+</script>
+
+<style scoped>
+.tab {
+  @apply p-4 cursor-pointer text-xl;
+}
+.tab.selected {
+  color: var(--fran-blue);
+  text-decoration: underline
+}
+
+.disclosure__button {
+  @apply w-full flex relative items-center justify-center text-xl px-4 py-2 border-b;
+  border-color: var(--default-blue);
+  /* background-color: var(--fran-blue); */
+}
+.disclosure__button:hover {
+  color: var(--fran-blue-dark);
+  border-color: var(--fran-blue-dark)
+}
+.disclosure__button .chevron {
+  @apply w-5 absolute right-5
+}
+.disclosure__panel {
+  @apply text-lg py-2
+}
+</style>
