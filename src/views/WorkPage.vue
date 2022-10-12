@@ -20,20 +20,20 @@
             :class="image.class"
           />
         </div>
+        <div class="packages">
+          
+        </div>
       </div>
     </div>
-    <ContactSection />
   </div>
 </template>
 
 <script>
-import ContactSection from '@/components/ContactSection.vue'
 
 export default {
   name: 'WorkPage',
   props: ['title'],
   components: {
-    ContactSection
   },
   data() {
     return {

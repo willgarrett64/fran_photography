@@ -162,21 +162,21 @@ export default {
 
 <style scoped>
 .tab {
-  @apply p-4 cursor-pointer text-xl;
+  @apply p-4 cursor-pointer text-2xl;
+}
+.tab:hover {
+  color: var(--fran-blue-dark);
 }
 .tab.selected {
-  color: var(--fran-blue);
-  text-decoration: underline
+  color: var(--fran-blue-dark);
 }
 
 .disclosure__button {
-  @apply w-full flex relative items-center justify-center text-xl px-4 py-2 border-b;
-  border-color: var(--default-blue);
-  /* background-color: var(--fran-blue); */
+  @apply w-full flex relative items-center justify-center text-xl px-4 py-2 rounded;
+  background-color: var(--fran-blue);
 }
 .disclosure__button:hover {
-  color: var(--fran-blue-dark);
-  border-color: var(--fran-blue-dark)
+  color: white;
 }
 .disclosure__button .chevron {
   @apply w-5 absolute right-5

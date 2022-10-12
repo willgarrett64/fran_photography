@@ -9,24 +9,25 @@
 
 html {
   overflow-x: hidden;
+  background-color: rgb(242, 242, 242);
+  object-fit: cover;
+  background-image: url("./assets/placeholders/white-background-2.jpg");
+  background-position: center;
 }
 
+/* fonts */
 .dancing-script {
   font-family: 'Dancing Script', cursive;
 }
-
 .tangerine {
   font-family: 'Tangerine', cursive;
 }
-
 .arima {
   font-family: 'Arima', cursive;
 }
-
 .ibarra {
   font-family: 'Ibarra Real Nova', serif;
 }
-
 .dosis {
   font-family: 'Dosis', sans-serif;
 }
