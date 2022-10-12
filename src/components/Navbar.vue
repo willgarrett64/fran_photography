@@ -10,19 +10,23 @@
     </svg>
     <ul class="navbar__menu_desktop">
       <li @click="scrollTo('about')">Sobre</li>
-      <!-- <li @click="scrollTo('gallery')">Portfólio</li> -->
-      <li >
-        <router-link :to="{ name: 'ServicePage', params: { service:'pregnancy' } }">Gestante</router-link>
-      </li>
-      <li >
-        <router-link :to="{ name: 'ServicePage', params: { service:'newborn' } }">Newborn</router-link>
-      </li>
-      <li >
-        <router-link :to="{ name: 'ServicePage', params: { service:'family' } }">Família</router-link>
-      </li>
-      <li >
-        <router-link :to="{ name: 'ServicePage', params: { service:'portraits' } }">Portrait</router-link>
-      </li>
+      <div class="services_dropdown">
+        <li @click="scrollTo('gallery')" class="services_dropdown-button">Meus Trabalhos</li>
+        <div class="services_dropdown-content">
+          <li >
+            <router-link :to="{ name: 'ServicePage', params: { service:'pregnancy' } }">Gestante</router-link>
+          </li>
+          <li >
+            <router-link :to="{ name: 'ServicePage', params: { service:'newborn' } }">Newborn</router-link>
+          </li>
+          <li >
+            <router-link :to="{ name: 'ServicePage', params: { service:'family' } }">Família</router-link>
+          </li>
+          <li >
+            <router-link :to="{ name: 'ServicePage', params: { service:'portraits' } }">Portrait</router-link>
+          </li>
+        </div>
+      </div>
       <!-- FAQs -->
       <li >
         <router-link :to="{ name: 'FaqsPage' }">Dúvidas</router-link>
@@ -199,4 +203,28 @@ li.listOption {
 li.listOption.active, li.listOption.selected {
   color: var(--fran-blue-medium);
 }
+
+
+
+.services_dropdown {
+  position: relative;
+  display: inline-block;
+}
+.services_dropdown-button {
+  border: none;
+}
+.services_dropdown-content {
+  @apply rounded hidden absolute;
+  min-width: 160px;
+  background-color: var(--fran-blue);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.services_dropdown-content a {
+  @apply text-base py-2 block hover:text-white;
+}
+.services_dropdown:hover .services_dropdown-content {
+  @apply block;
+}
+
 </style>
