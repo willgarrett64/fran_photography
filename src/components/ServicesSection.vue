@@ -8,7 +8,7 @@
 
     <div>
       <div class="gallery__list">
-        <div class="image__card__holder" @click="goToCollection('pregnancy')">
+        <div class="image__card__holder" @click="goToService('pregnancy')">
           <div class="card__title dancing-script"><h4>Gestante</h4></div>
           <div class="image__card">
             <div class="image__overlay">
@@ -17,7 +17,7 @@
             <img src="../assets/placeholders/download/P10002260090.jpg" alt="">
           </div>
         </div>
-        <div class="image__card__holder" @click="goToCollection('newborn')">
+        <div class="image__card__holder" @click="goToService('newborn')">
           <div class="card__title dancing-script"><h4>Newborn</h4></div>
           <div class="image__card">
             <div class="image__overlay">
@@ -26,7 +26,7 @@
             <img src="../assets/placeholders/download/P10002260084.jpg" alt="">
           </div>
         </div>
-        <div class="image__card__holder" @click="goToCollection('family')">
+        <div class="image__card__holder" @click="goToService('family')">
           <div class="card__title dancing-script"><h4>Família</h4></div>
           <div class="image__card">
             <div class="image__overlay">
@@ -35,7 +35,7 @@
             <img src="../assets/placeholders/download/P10002260083.jpg" alt="">
           </div>
         </div>
-        <div class="image__card__holder" @click="goToCollection('portraits')">
+        <div class="image__card__holder" @click="goToService('portraits')">
           <div class="card__title dancing-script"><h4>Portrait</h4></div>
           <div class="image__card">
             <div class="image__overlay">
@@ -51,13 +51,13 @@
 
 <script>
 export default {
-  name: 'GallerySection',
+  name: 'ServicesSection',
   props: {
     msg: String
   },
   methods: {
-    goToCollection(collection) {
-      this.$router.push({ name: 'WorkPage', params: { work: collection } })
+    goToService(service) {
+      this.$router.push({ name: 'ServicePage', params: { service } })
     }
   }
 }

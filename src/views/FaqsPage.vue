@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-32 mb-20">
+  <div class="mt-20 pb-20">
     <div class="title">
       <div class="title__decoration"></div>
       <h2 class="arima">Dúvidas</h2>

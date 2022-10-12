@@ -12,16 +12,16 @@
       <li @click="scrollTo('about')">Sobre</li>
       <!-- <li @click="scrollTo('gallery')">Portfólio</li> -->
       <li >
-        <router-link :to="{ name: 'WorkPage', params: { work:'pregnancy' } }">Gestante</router-link>
+        <router-link :to="{ name: 'ServicePage', params: { service:'pregnancy' } }">Gestante</router-link>
       </li>
       <li >
-        <router-link :to="{ name: 'WorkPage', params: { work:'newborn' } }">Newborn</router-link>
+        <router-link :to="{ name: 'ServicePage', params: { service:'newborn' } }">Newborn</router-link>
       </li>
       <li >
-        <router-link :to="{ name: 'WorkPage', params: { work:'family' } }">Família</router-link>
+        <router-link :to="{ name: 'ServicePage', params: { service:'family' } }">Família</router-link>
       </li>
       <li >
-        <router-link :to="{ name: 'WorkPage', params: { work:'portraits' } }">Portrait</router-link>
+        <router-link :to="{ name: 'ServicePage', params: { service:'portraits' } }">Portrait</router-link>
       </li>
       <!-- FAQs -->
       <li >

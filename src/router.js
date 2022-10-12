@@ -1,6 +1,6 @@
 import FaqsPage from '@/views/FaqsPage'
 import LandingPage from '@/views/LandingPage'
-import WorkPage from '@/views/WorkPage'
+import ServicePage from '@/views/ServicePage'
 import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
@@ -10,9 +10,9 @@ const routes = [
     component: LandingPage
   },
   {
-    path: '/:work',
-    name: 'WorkPage',
-    component: WorkPage
+    path: '/:service',
+    name: 'ServicePage',
+    component: ServicePage
   },
   {
     path: '/faqs',

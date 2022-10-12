@@ -1,39 +1,50 @@
 <template>
-  <div>
-    <div class="mt-32 mb-20">
-      <div class="title">
-        <div class="title__decoration"></div>
-        <h2 class="arima">{{ collectionTitle }}</h2>
-        <div class="title__decoration"></div>
+  <div class="mt-20 pb-40">
+    <div class="title">
+      <div class="title__decoration"></div>
+      <h2 class="arima">{{ collectionTitle }}</h2>
+      <div class="title__decoration"></div>
+    </div>
+    <div class="max-w-5xl m-auto">
+      <div class="text-left text-lg">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque. Egestas erat imperdiet sed euismod nisi porta. Nibh mauris cursus mattis molestie a iaculis at.</p>
+        <br>
+        <p>Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit. Ullamcorper a lacus vestibulum sed arcu. Vel facilisis volutpat est velit egestas dui id ornare arcu. Est lorem ipsum dolor sit amet consectetur adipiscing.</p>
+        <br>
+        <p>Vestibulum lorem sed risus ultricies tristique nulla aliquet enim tortor.</p>
       </div>
-      <div class="px-40">
-        <div class="text-left text-lg">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque. Egestas erat imperdiet sed euismod nisi porta. Nibh mauris cursus mattis molestie a iaculis at.</p>
-          <p>Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit. Ullamcorper a lacus vestibulum sed arcu. Vel facilisis volutpat est velit egestas dui id ornare arcu. Est lorem ipsum dolor sit amet consectetur adipiscing.</p>
-          <p>Vestibulum lorem sed risus ultricies tristique nulla aliquet enim tortor.</p>
-        </div>
-        <div class="gallery__collection">
-          <img
-            v-for="image in currentCollection"
-            :key="image.name"
-            :src="getSrc(image)"
-            :class="image.class"
-          />
-        </div>
-        <div class="packages">
-          
-        </div>
+      <div class="gallery__collection">
+        <img
+          v-for="(image, index) in currentCollection"
+          :key="image.name"
+          :src="getSrc(image)"
+          :class="image.class"
+          @click="openGallery(index)"
+        />
+        <button @click="openGallery(0)" class="viewMoreButton">View more</button>
+      </div>
+
+      <div class="packages">
+        
       </div>
     </div>
+    <GallerySlideshow
+      v-if="showGallery"
+      :images="currentCollection"
+      :startingIndex="galleryStartingIndex"
+      @modal-close="closeGallery"
+    />
   </div>
 </template>
 
 <script>
+import GallerySlideshow from '@/components/GallerySlideshow'
 
 export default {
   name: 'WorkPage',
   props: ['title'],
   components: {
+    GallerySlideshow
   },
   data() {
     return {
@@ -103,7 +114,9 @@ export default {
             class: 'landscape'
           }
         ]
-      }
+      },
+      galleryStartingIndex: 0,
+      showGallery: false
     }
   },
   computed: {
@@ -114,7 +127,7 @@ export default {
       return this.collectionNames.indexOf(this.collectionName)
     },
     collectionName() {
-      return this.$route.params.work
+      return this.$route.params.service
     },
     collectionTitle() {
       switch (this.collectionName) {
@@ -132,22 +145,21 @@ export default {
     },
     collectionNames() {
       return Object.keys(this.collections)
-    },
-    nextCollection() {
-      const nextIndex = this.currentCollectionIndex === this.collectionNames.length - 1 ? 0 : this.currentCollectionIndex + 1
-      return `/gallery/${this.collectionNames[nextIndex]}`
-    },
-    prevCollection() {
-      const prevIndex = this.currentCollectionIndex === 0 ? this.collectionNames.length - 1 : this.currentCollectionIndex - 1
-      return `/gallery/${this.collectionNames[prevIndex]}`
     }
   },
   methods: {
+    closeGallery() {
+      this.showGallery = false
+    },
     getSrc(image) {
       return require(`../assets/placeholders/${image.name}`)
     },
     goTo(newRoute) {
       this.$router.push(newRoute)
+    },
+    openGallery(index) {
+      this.galleryStartingIndex = index
+      this.showGallery = true
     }
   }
 }
@@ -168,5 +180,13 @@ export default {
 
 .gallery__collection .full-width {
   @apply col-span-2
+}
+
+.viewMoreButton {
+  @apply text-xl;
+  grid-column: 1/-1
+}
+.viewMoreButton:hover {
+  color: var(--fran-blue-dark);
 }
 </style>

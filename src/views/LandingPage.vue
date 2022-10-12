@@ -6,7 +6,7 @@
     <QuoteDivider quote="" />
     <div class="parallax photo1"></div>
     <QuoteDivider quote="" />
-    <GallerySection />
+    <ServicesSection />
     <QuoteDivider quote="" />
     <div class="parallax photo2"></div>
     <QuoteDivider quote="" extraClasses="md:hidden" />
@@ -18,7 +18,7 @@
 
 import AboutMe from '@/components/AboutMe.vue'
 import ContactSection from '@/components/ContactSection.vue'
-import GallerySection from '@/components/GallerySection.vue'
+import ServicesSection from '@/components/ServicesSection.vue'
 import SplashSection from '@/components/SplashSection.vue'
 import QuoteDivider from '@/components/QuoteDivider.vue'
 
@@ -27,7 +27,7 @@ export default {
   components: {
     AboutMe,
     ContactSection,
-    GallerySection,
+    ServicesSection,
     SplashSection,
     QuoteDivider
   },
