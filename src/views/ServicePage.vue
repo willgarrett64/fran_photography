@@ -25,7 +25,7 @@
       </div>
 
       <div class="packages">
-        
+
       </div>
     </div>
     <GallerySlideshow

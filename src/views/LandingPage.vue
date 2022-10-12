@@ -1,13 +1,10 @@
 <template>
   <div class="h-full">
     <SplashSection />
-    <QuoteDivider quote="" extraClasses="hidden md:flex" />
     <AboutMe />
-    <QuoteDivider quote="" />
+    <QuoteDivider quote="" extraClasses="md:hidden" />
     <div class="parallax photo1"></div>
-    <QuoteDivider quote="" />
     <ServicesSection />
-    <QuoteDivider quote="" />
     <div class="parallax photo2"></div>
     <QuoteDivider quote="" extraClasses="md:hidden" />
     <ContactSection />

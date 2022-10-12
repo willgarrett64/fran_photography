@@ -117,7 +117,7 @@ export default {
   },
   computed: {
     hideLogo() {
-      return this.$route.name === 'LandingPage'
+      return this.$route.name === 'LandingPage' && this.md
     },
     md() {
       return this.windowWidth >= 768
