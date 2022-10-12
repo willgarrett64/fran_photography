@@ -1,7 +1,9 @@
 <template>
   <nav id="navbar">
-    <!-- <span>Martello Photograpy</span> -->
-    <router-link to="/"><img src="../assets/fran-logo-colours.png" alt="logo" srcset="" class="h-28 md:hidden"></router-link>
+    <!-- logo -->
+    <router-link to="/">
+      <img src="../assets/fran-logo-colours.png" alt="logo" class="h-20" :class="hideLogo ? 'hidden' : ''">
+    </router-link>
     <!-- burger menu -->
     <svg @click="toggleMenu" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 md:hidden" fill="none" viewBox="0 0 24 24" stroke="#000" stroke-width="1.5">
       <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
@@ -110,6 +112,9 @@ export default {
     }
   },
   computed: {
+    hideLogo() {
+      return this.$route.name === 'LandingPage'
+    },
     md() {
       return this.windowWidth >= 768
     }
