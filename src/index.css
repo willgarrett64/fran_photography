@@ -38,11 +38,11 @@ html {
   @apply w-full px-4 py-8 flex justify-center items-center;
 }
 .title h2 {
-  @apply mx-auto px-5 border-gray-500;
-  font-size: 1.8rem;
+  @apply mx-auto px-5 border-gray-500 flex-shrink-0;
+  font-size: 1.6rem;
 }
 .title__decoration {
-  @apply w-full px-10 bg-gray-500 rounded;
+  @apply w-full bg-gray-500 rounded;
   height: 2px
 }
 

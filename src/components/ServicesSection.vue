@@ -71,21 +71,8 @@ export default {
 
 .gallery {
   background-image: url("../assets/placeholders/white-background-2.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-/* title and decoration */
-.title {
-  @apply w-full px-4 py-8 flex justify-center items-center;
-}
-.title h2 {
-  @apply mx-auto px-5 border-gray-500;
-  font-size: 1.8rem;
-}
-.title__decoration {
-  @apply w-full px-10 bg-gray-500 rounded;
-  height: 2px
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 /* gallery categories wrapper */
