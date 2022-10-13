@@ -214,9 +214,8 @@ li.listOption.active, li.listOption.selected {
   border: none;
 }
 .services_dropdown-content {
-  @apply rounded hidden absolute;
+  @apply rounded hidden absolute bg-white;
   min-width: 160px;
-  background-color: var(--fran-blue);
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
@@ -225,6 +224,9 @@ li.listOption.active, li.listOption.selected {
 }
 .services_dropdown:hover .services_dropdown-content {
   @apply block;
+}
+.services_dropdown-content a:hover {
+  background-color: var(--fran-blue);
 }
 
 </style>
