@@ -59,14 +59,6 @@ export default {
   font-weight: 600;
 }
 
-.social__icons {
-  @apply w-full flex justify-center space-x-8 pt-1;
-}
-
-.social__icon {
-  @apply w-8;
-}
-
 @screen md {
   .contact__section{
     @apply w-1/2 left-1/2;

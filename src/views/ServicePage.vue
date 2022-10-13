@@ -1,11 +1,11 @@
 <template>
-  <div class="mt-20 pb-40">
+  <div class="view__content">
     <div class="title">
       <div class="title__decoration"></div>
       <h2 class="arima">{{ collectionTitle }}</h2>
       <div class="title__decoration"></div>
     </div>
-    <div class="max-w-5xl m-auto">
+    <div class="px-4 max-w-5xl m-auto space-y-4">
       <div class="text-left text-lg">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque. Egestas erat imperdiet sed euismod nisi porta. Nibh mauris cursus mattis molestie a iaculis at.</p>
         <br>
@@ -24,8 +24,43 @@
         <button @click="openGallery(0)" class="viewMoreButton">View more</button>
       </div>
 
-      <div class="packages">
+      <div class="prices__section">
+        <h3 class="text-2xl">Investimento</h3>
 
+        <ul class="py-4">
+          <li>1 hour photoshoot</li>
+          <li>50 digital photos</li>
+          <li>15 printed photos</li>
+        </ul>
+        <span>€190</span>
+
+        <p class="pt-4 ibarra text-base">Each one of my services has its own package with individual pricing due to the specific requirements of the photoshoot. For a personalised package, please don't hesitate to get in touch. If you have any more questions, <router-link class="underline" :to="{ name: 'FaqsPage' }">take a look at our FAQs</router-link>.</p>
+
+        <p class="pt-4 ibarra text-base">50% deposit is required at the time of booking, with the remaining amount paid on the day of the photoshoot</p>
+      </div>
+
+      <div class="contact__section">
+        <span class="name text-2xl">Francine Martello</span>
+        <div class="flex items-center justify-center">
+          <div class="mr-2"><PhoneIcon class="w-5" /></div>
+          <span>+49 15752473422</span>
+        </div>
+        <div class="flex items-center justify-center">
+          <div class="mr-2"><MailIcon class="w-5" /></div>
+          <a class="underline" href="mailto:martellofrancine@gmail.com">martellofrancine@gmail.com</a>
+        </div>
+        <div class="flex items-center justify-center">
+          <div class="mr-2"><LocationMarkerIcon class="w-5" /></div>
+          <span>Kemptenerstraße 66, 87600 Kaufbeuren</span>
+        </div>
+        <div class="social__icons">
+          <!-- facebook link -->
+          <a href="https://www.facebook.com/francine.martello" target="#"><img class="social__icon" src="../assets/placeholders/icons/facebook_icon.png" alt="facebook icon"></a>
+          <!-- instagram link -->
+          <a href="https://www.instagram.com/martello_fran_photography/" target="#"><img class="social__icon" src="../assets/placeholders/icons/instagram_icon.png" alt="instagram icon"></a>
+          <!-- whatsapp link -->
+          <a href="https://api.whatsapp.com/send?phone=+4915752473422" target="#"><img class="social__icon" src="../assets/placeholders/icons/whatsapp_icon.png" alt="whatsapp icon"></a>
+        </div>
       </div>
     </div>
     <GallerySlideshow
@@ -39,12 +74,16 @@
 
 <script>
 import GallerySlideshow from '@/components/GallerySlideshow'
+import { LocationMarkerIcon, MailIcon, PhoneIcon } from '@heroicons/vue/solid'
 
 export default {
   name: 'WorkPage',
   props: ['title'],
   components: {
-    GallerySlideshow
+    GallerySlideshow,
+    LocationMarkerIcon,
+    MailIcon,
+    PhoneIcon
   },
   data() {
     return {
@@ -165,28 +204,43 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+/* gallery */
 .gallery__collection {
-  @apply grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-4 py-10
+  @apply grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-4 py-4
 }
-
 .gallery__collection img {
   @apply h-full object-cover rounded cursor-pointer;
 }
-
 .gallery__collection .portrait {
   @apply row-span-2
 }
-
 .gallery__collection .full-width {
   @apply col-span-2
 }
-
 .viewMoreButton {
-  @apply text-xl;
+  @apply text-xl underline;
   grid-column: 1/-1
 }
 .viewMoreButton:hover {
   color: var(--fran-blue-dark);
+}
+
+/* prices */
+.prices__section {
+  @apply w-full py-4 px-4 flex flex-col space-y-2 text-xl rounded;
+  background-color: var(--fran-blue-transparent);
+  font-weight: 600;
+}
+/* contact */
+.contact__section {
+  @apply w-full py-4 flex flex-col space-y-2 text-xl rounded;
+  font-weight: 600;
+}
+.social__icons {
+  @apply w-full flex justify-center space-x-8 pt-1;
+}
+.social__icon {
+  @apply w-8;
 }
 </style>

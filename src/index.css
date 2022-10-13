@@ -32,6 +32,10 @@ html {
   font-family: 'Dosis', sans-serif;
 }
 
+/*  */
+.view__content {
+  @apply mt-28 md:mt-20 pb-10;
+}
 
 /* landing page section title and decoration */
 .title {

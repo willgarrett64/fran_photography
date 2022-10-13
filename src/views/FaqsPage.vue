@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-20 pb-20">
+  <div class="view__content">
     <div class="title">
       <div class="title__decoration"></div>
       <h2 class="arima">Dúvidas</h2>
@@ -7,49 +7,49 @@
     </div>
     <div>
       <!-- tabs -->
-      <div>
-        <span
-          @click="selectTab('general')"
-          class="tab"
-          :class="selected === 'general' ? 'selected' : ''"
-        >
-          Gerais
-        </span>
-        <span
-          @click="selectTab('pregnancy')"
-          class="tab"
-          :class="selected === 'pregnancy' ? 'selected' : ''"
-        >
-          Gestantes
-        </span>
-        <span
-          @click="selectTab('newborn')"
-          class="tab"
-          :class="selected === 'newborn' ? 'selected' : ''"
-        >
-          Newborn
-        </span>
-        <span
-          @click="selectTab('family')"
-          class="tab"
-          :class="selected === 'family' ? 'selected' : ''"
-        >
-          Família
-        </span>
-        <span
-          @click="selectTab('portrait')"
-          class="tab"
-          :class="selected === 'portrait' ? 'selected' : ''"
-        >
-          Portrait
-        </span>
+      <div class="relative flex justify-center w-full px-4">
+        <Listbox v-model="selectedCategory">
+          <div class="relative w-full">
+            <p class="text-left mb-2 sm:hidden">Choose a category</p>
+            <ListboxButton class="listButton">
+              <span>{{ selectedCategory }}</span><ChevronDownIcon class="w-4" />
+            </ListboxButton>
+            <transition
+              leave-active-class="transition duration-100 ease-in"
+              leave-from-class="opacity-100"
+              leave-to-class="opacity-0"
+            >
+              <ListboxOptions class="listOptions" :static="sm">
+                <ListboxOption
+                  as="template"
+                  v-slot="{ active, selected }"
+                  v-for="(questions, category) in faqs"
+                  :key="category"
+                  :value="category"
+                >
+                  <li
+                    class="listOption"
+                    :class="{
+                      'selected': selected,
+                      'active': active,
+                    }"
+                  >
+                    <div class="flex items-center">
+                      {{ category }}
+                    </div>
+                  </li>
+                </ListboxOption>
+              </ListboxOptions>
+            </transition>
+          </div>
+        </Listbox>
       </div>
       <!-- faqs -->
-      <div class="max-w-5xl m-auto">
+      <div class="max-w-5xl px-4 m-auto">
         <div class="mt-8 flex flex-col space-y-2">
           <Disclosure
             v-slot="{ open }"
-            v-for="faq in faqs[selected]"
+            v-for="faq in faqs[selectedCategory]"
             :key=faq.q
           >
             <DisclosureButton class="disclosure__button">
@@ -76,20 +76,29 @@
 </template>
 
 <script>
-import { ChevronRightIcon } from '@heroicons/vue/solid'
+import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/vue/solid'
 import {
   Disclosure,
   DisclosureButton,
-  DisclosurePanel
+  DisclosurePanel,
+  Listbox,
+  ListboxButton,
+  ListboxOptions,
+  ListboxOption
 } from '@headlessui/vue'
 
 export default {
   name: 'FaqsPage',
   components: {
+    ChevronDownIcon,
     ChevronRightIcon,
     Disclosure,
     DisclosureButton,
-    DisclosurePanel
+    DisclosurePanel,
+    Listbox,
+    ListboxButton,
+    ListboxOptions,
+    ListboxOption
   },
   data() {
     return {
@@ -149,20 +158,32 @@ export default {
           }
         ]
       },
-      selected: 'general'
+      selectedCategory: 'general',
+      windowWidth: window.innerWidth
+    }
+  },
+  computed: {
+    sm() {
+      return this.windowWidth >= 640
     }
   },
   methods: {
-    selectTab(tab) {
-      this.selected = tab
+    onWindowResize() {
+      this.windowWidth = window.innerWidth
     }
-  }
+  },
+  mounted() {
+    window.addEventListener('resize', this.onWindowResize)
+  },
+  unmounted() {
+    window.removeEventListener('resize', this.onWindowResize)
+  },
 }
 </script>
 
 <style scoped>
 .tab {
-  @apply p-4 cursor-pointer text-2xl;
+  @apply px-4 sm:py-4 cursor-pointer text-2xl;
 }
 .tab:hover {
   color: var(--fran-blue-dark);
@@ -171,6 +192,7 @@ export default {
   color: var(--fran-blue-dark);
 }
 
+/* faq accordians */
 .disclosure__button {
   @apply w-full flex relative items-center justify-center text-xl px-4 py-2 rounded;
   background-color: var(--fran-blue);
@@ -184,4 +206,28 @@ export default {
 .disclosure__panel {
   @apply text-lg py-2
 }
+
+.listButton {
+  @apply bg-white capitalize relative flex items-center justify-between space-x-1 cursor-pointer px-4 py-2 text-xl rounded-lg w-full border-2;
+  @apply sm:hidden;
+  border-color: var(--fran-blue);
+}
+.listOptions {
+  @apply absolute capitalize bg-white z-10 w-full py-1 mt-1 rounded-lg shadow-lg focus:outline-none shadow-none sm:py-4 cursor-pointer text-xl border-2;
+  border-color: var(--fran-blue);
+
+}
+li.listOption {
+  @apply relative flex items-center bg-transparent cursor-pointer py-1 cursor-default select-none px-4;
+}
+li.listOption.active, li.listOption.selected {
+  color: var(--fran-blue-medium);
+}
+
+@screen sm {
+  .listOptions {
+    @apply flex bg-transparent relative justify-center space-x-4 border-0
+  }
+}
+
 </style>
