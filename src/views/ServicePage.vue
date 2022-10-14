@@ -6,11 +6,7 @@
       <div class="title__decoration"></div>
     </div>
     <div class="px-4 max-w-5xl m-auto space-y-4">
-      <div class="text-left text-lg">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque. Egestas erat imperdiet sed euismod nisi porta. Nibh mauris cursus mattis molestie a iaculis at.</p>
-        <br>
-        <p>Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit. Ullamcorper a lacus vestibulum sed arcu. Vel facilisis volutpat est velit egestas dui id ornare arcu. Est lorem ipsum dolor sit amet consectetur adipiscing.</p>
-        <br>
+      <div class="text-lg">
         <p>Vestibulum lorem sed risus ultricies tristique nulla aliquet enim tortor.</p>
       </div>
       <div class="gallery__collection">
@@ -236,11 +232,5 @@ export default {
 .contact__section {
   @apply w-full py-4 flex flex-col space-y-2 text-xl rounded;
   font-weight: 600;
-}
-.social__icons {
-  @apply w-full flex justify-center space-x-8 pt-1;
-}
-.social__icon {
-  @apply w-8;
 }
 </style>

@@ -50,6 +50,13 @@ html {
   height: 2px
 }
 
+.social__icons {
+  @apply w-full flex justify-center space-x-8 pt-1;
+}
+.social__icon {
+  @apply w-8;
+}
+
 @screen lg {
   .title {
     @apply pt-16 space-x-10;

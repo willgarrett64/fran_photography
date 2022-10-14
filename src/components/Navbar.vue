@@ -183,7 +183,7 @@ export default {
 
 .navbar__menu_desktop li {
   @apply cursor-pointer;
-  font-size: 1.9rem;
+  font-size: 1.5rem;
 }
 
 .navbar__menu_desktop li:hover {

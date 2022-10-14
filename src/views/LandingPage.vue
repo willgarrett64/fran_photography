@@ -1,12 +1,12 @@
 <template>
   <div class="h-full">
     <SplashSection />
+    <QuoteDivider quote="Um pouco sobre mim" extraClasses="md:hidden" />
     <AboutMe />
-    <QuoteDivider quote="" extraClasses="md:hidden" />
     <div class="parallax photo1"></div>
     <ServicesSection />
     <div class="parallax photo2"></div>
-    <QuoteDivider quote="" extraClasses="md:hidden" />
+    <QuoteDivider quote="Entre em contato" extraClasses="md:hidden" />
     <ContactSection />
   </div>
 </template>
