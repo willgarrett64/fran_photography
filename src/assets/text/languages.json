@@ -2,7 +2,7 @@
   "en": {
     "nav": {
       "links": ["About", "My Services", "FAQs", "Contact"],
-      "services": ["Pregnancy", "Newborn", "Family", "Portrait"]
+      "services": ["Pregnancy", "Newborn", "Family", "Portraits"]
     },
     "landing": {
       "splash": {
@@ -28,7 +28,7 @@
             "text": "..."
           },
           {
-            "header": "Portrait",
+            "header": "Portraits",
             "text": "..."
           }
         ]
@@ -82,7 +82,7 @@
             "price": "€190"
           }
         },
-        "portrait": {
+        "portraits": {
           "header": "Portrait",
           "text": "...",
           "prices": {
@@ -223,7 +223,7 @@
             "price": "€190"
           }
         },
-        "portrait": {
+        "portraits": {
           "header": "Portrait",
           "text": "O olhar, a composicao, luz... e o seu momomento!",
           "prices": {
@@ -261,114 +261,6 @@
       },
       {
         "header": "Família",
-        "questions": {
-          "q": "",
-          "a": ""
-        }
-      },
-      {
-        "header": "Portrait",
-        "questions": {
-          "q": "",
-          "a": ""
-        }
-      }
-    ],
-    "contact": {
-      "name": "Francine Martello",
-      "number": "+49 15752473422",
-      "email": "martellofrancine@gmail.com",
-      "address": "Kemptenerstraße 66, 87600 Kaufbeuren"
-    }
-  },
-  "de": {
-    "nav": {
-      "links": ["About", "My Services", "FAQs", "Contact"],
-      "services": ["Pregnancy", "Newborn", "Family", "Portrait"]
-    },
-    "landing": {
-      "splash": {
-        "tagline": "Capture what the eyes don't see"
-      },
-      "about": {
-        "header": "A little about me",
-        "content": "Hi, I'm Fran; mother, wide, engineer and photographer. Born in Rio de Janeiro and moved to Germany with a dream: be happy! Each moment tells a new story that through photography is possible to tell without words. Each day learning to ... for the good moments that life throws at us."
-      },
-      "services": {
-        "header": "My Services",
-        "services": [
-          {
-            "header": "Pregnancy",
-            "text": "... where my love for photography began!"
-          },
-          {
-            "header": "Newborn",
-            "text": "Register the first moments of the most important person in our lives, our child, our love."
-          },
-          {
-            "header": "Family",
-            "text": "..."
-          },
-          {
-            "header": "Portrait",
-            "text": "..."
-          }
-        ]
-      }
-    },
-    "servicePage": {
-      "generic": {
-        "prices": "Prices",
-        "more": "View more",
-        "packageDetail": {
-          "text": "Each one of my services has its own package with individual pricing due to the specific requirements of the photoshoot. For a personalised package, please don't hesitate to get in touch. If you have any more questions, ",
-          "link": "take a look at our FAQs."
-        },
-        "payment": "50% deposit is required at the time of booking, with the remaining amount paid on the day of the photoshoot."
-      },
-      "services": [
-        {
-          "header": "Pregnancy",
-          "text": [
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque. Egestas erat imperdiet sed euismod nisi porta. Nibh mauris cursus mattis molestie a iaculis at.",
-            "Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit. Ullamcorper a lacus vestibulum sed arcu. Vel facilisis volutpat est velit egestas dui id ornare arcu. Est lorem ipsum dolor sit amet consectetur adipiscing.",
-            "Vestibulum lorem sed risus ultricies tristique nulla aliquet enim tortor."
-          ],
-          "prices": {
-            "included": [
-              "1 hour photoshoot",
-              "50 digital photos",
-              "15 printed photos"
-            ],
-            "price": "€190"
-          }
-        }
-      ]
-    },
-    "faqs": [
-      {
-        "header": "General",
-        "questions": {
-          "q": "",
-          "a": ""
-        }
-      },
-      {
-        "header": "Pregnancy",
-        "questions": {
-          "q": "",
-          "a": ""
-        }
-      },
-      {
-        "header": "Newborn",
-        "questions": {
-          "q": "",
-          "a": ""
-        }
-      },
-      {
-        "header": "Family",
         "questions": {
           "q": "",
           "a": ""
