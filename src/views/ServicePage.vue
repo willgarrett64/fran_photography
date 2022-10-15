@@ -1,14 +1,13 @@
 <template>
   <div class="view__content">
-    <div class="title">
-      <div class="title__decoration"></div>
-      <h2 class="arima">{{ collectionTitle }}</h2>
-      <div class="title__decoration"></div>
+    <div class="pageHeader">
+      <h2 class="arima">{{ lang.servicePage.services[collectionName].header }}</h2>
     </div>
-    <div class="px-4 max-w-5xl m-auto space-y-4">
-      <div class="text-lg">
-        <p>Vestibulum lorem sed risus ultricies tristique nulla aliquet enim tortor.</p>
-      </div>
+    <div class="text-lg">
+      <p>{{ lang.servicePage.services[collectionName].text }}</p>
+    </div>
+    <div class="mt-4 px-4 max-w-5xl m-auto space-y-4">
+      <div class="pageHeader_divider"></div>
       <div class="gallery__collection">
         <img
           v-for="(image, index) in currentCollection"
@@ -17,11 +16,14 @@
           :class="image.class"
           @click="openGallery(index)"
         />
-        <button @click="openGallery(0)" class="viewMoreButton">View more</button>
+        <button @click="openGallery(0)" class="viewMoreButton">{{ lang.servicePage.generic.more }}</button>
       </div>
 
       <div class="prices__section">
-        <h3 class="text-2xl">Investimento</h3>
+        <h3 class="text-2xl">{{ lang.servicePage.generic.prices }}</h3>
+
+        <p class="pt-4 ibarra text-base">{{ lang.servicePage.generic.packageDetail.numberOfPhotos }}</p>
+
 
         <ul class="py-4">
           <li>1 hour photoshoot</li>
@@ -30,9 +32,9 @@
         </ul>
         <span>€190</span>
 
-        <p class="pt-4 ibarra text-base">Each one of my services has its own package with individual pricing due to the specific requirements of the photoshoot. For a personalised package, please don't hesitate to get in touch. If you have any more questions, <router-link class="underline" :to="{ name: 'FaqsPage' }">take a look at our FAQs</router-link>.</p>
+        <p class="pt-4 ibarra text-base">{{ lang.servicePage.generic.packageDetail.packageDifferences }}<router-link class="underline" :to="{ name: 'FaqsPage' }">{{ lang.servicePage.generic.packageDetail.link }}</router-link>.</p>
 
-        <p class="pt-4 ibarra text-base">50% deposit is required at the time of booking, with the remaining amount paid on the day of the photoshoot</p>
+        <p class="pt-4 ibarra text-base">{{ lang.servicePage.generic.payment }}</p>
       </div>
 
       <div class="contact__section">
@@ -70,10 +72,11 @@
 
 <script>
 import GallerySlideshow from '@/components/GallerySlideshow'
+import { mapGetters } from 'vuex'
 import { LocationMarkerIcon, MailIcon, PhoneIcon } from '@heroicons/vue/solid'
 
 export default {
-  name: 'WorkPage',
+  name: 'ServicePage',
   props: ['title'],
   components: {
     GallerySlideshow,
@@ -155,11 +158,9 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['lang']),
     currentCollection() {
       return this.collections[this.collectionName]
-    },
-    currentCollectionIndex() {
-      return this.collectionNames.indexOf(this.collectionName)
     },
     collectionName() {
       return this.$route.params.service
@@ -177,9 +178,6 @@ export default {
         default:
           return null
       }
-    },
-    collectionNames() {
-      return Object.keys(this.collections)
     }
   },
   methods: {

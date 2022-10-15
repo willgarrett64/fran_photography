@@ -9,30 +9,30 @@
       <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
     </svg>
     <ul class="navbar__menu_desktop">
-      <li @click="scrollTo('about')">Sobre</li>
+      <li @click="scrollTo('about')">{{ lang.nav.links[0] }}</li>
       <div class="services_dropdown">
-        <li @click="scrollTo('gallery')" class="services_dropdown-button">Meus Trabalhos</li>
+        <li @click="scrollTo('gallery')" class="services_dropdown-button">{{ lang.nav.links[1] }}</li>
         <div class="services_dropdown-content">
           <li >
-            <router-link :to="{ name: 'ServicePage', params: { service:'pregnancy' } }">Gestante</router-link>
+            <router-link :to="{ name: 'ServicePage', params: { service:'pregnancy' } }">{{ lang.nav.services[0] }}</router-link>
           </li>
           <li >
-            <router-link :to="{ name: 'ServicePage', params: { service:'newborn' } }">Newborn</router-link>
+            <router-link :to="{ name: 'ServicePage', params: { service:'newborn' } }">{{ lang.nav.services[1] }}</router-link>
           </li>
           <li >
-            <router-link :to="{ name: 'ServicePage', params: { service:'family' } }">Família</router-link>
+            <router-link :to="{ name: 'ServicePage', params: { service:'family' } }">{{ lang.nav.services[2] }}</router-link>
           </li>
           <li >
-            <router-link :to="{ name: 'ServicePage', params: { service:'portraits' } }">Portrait</router-link>
+            <router-link :to="{ name: 'ServicePage', params: { service:'portraits' } }">{{ lang.nav.services[3] }}</router-link>
           </li>
         </div>
       </div>
       <!-- FAQs -->
       <li >
-        <router-link :to="{ name: 'FaqsPage' }">Dúvidas</router-link>
+        <router-link :to="{ name: 'FaqsPage' }">{{ lang.nav.links[2] }}</router-link>
       </li>
 
-      <li @click="scrollTo('contact')">Contato</li>
+      <li @click="scrollTo('contact')">{{ lang.nav.links[3] }}</li>
       <div class="relative">
         <Listbox v-model="language">
           <div class="relative">
@@ -78,6 +78,7 @@
 <script>
 import NavbarMenu from './NavbarMenu.vue'
 import { ChevronDownIcon } from '@heroicons/vue/solid'
+import { mapGetters } from 'vuex'
 import {
   Listbox,
   ListboxButton,
@@ -85,37 +86,36 @@ import {
   ListboxOption
 } from '@headlessui/vue'
 
+const languages = [
+  {
+    name: 'Deutsch',
+    code: 'de',
+    image: 'germany-flag.png'
+  },
+  {
+    name: 'English',
+    code: 'en',
+    image: 'uk-flag.png'
+  },
+  {
+    name: 'Português',
+    code: 'pt',
+    image: 'brazil-flag.png'
+  }
+]
+
 export default {
   name: 'Navbar',
   data() {
     return {
-      language: {
-        name: 'Português',
-        code: 'pt',
-        image: 'brazil-flag.png'
-      },
-      languages: [
-        {
-          name: 'Deutsch',
-          code: 'de',
-          image: 'germany-flag.png'
-        },
-        {
-          name: 'English',
-          code: 'en',
-          image: 'uk-flag.png'
-        },
-        {
-          name: 'Português',
-          code: 'pt',
-          image: 'brazil-flag.png'
-        }
-      ],
+      language: languages[2],
+      languages: languages,
       showMenu: false,
       windowWidth: window.innerWidth
     }
   },
   computed: {
+    ...mapGetters(['lang']),
     hideLogo() {
       return this.$route.name === 'LandingPage' && this.md
     },
@@ -154,6 +154,11 @@ export default {
   },
   unmounted() {
     window.removeEventListener('resize', this.onWindowResize)
+  },
+  watch: {
+    language() {
+      this.$store.commit('setLanguage', this.language.code)
+    }
   }
   // mounted() {
   //   let prevScrollpos = window.pageYOffset;
@@ -194,7 +199,7 @@ export default {
   @apply capitalize relative w-max flex items-center space-x-1 cursor-pointer;
 }
 .listOptions {
-  @apply absolute right-5 z-10 w-max py-1 mt-1 rounded-md shadow-lg focus:outline-none shadow-none;
+  @apply absolute right-0 top-6 z-10 w-max py-1 mt-1 pr-5 pl-2 rounded-md bg-white shadow-lg focus:outline-none shadow-none;
 }
 li.listOption {
   @apply relative flex items-center justify-end bg-transparent cursor-pointer py-2 cursor-default select-none;

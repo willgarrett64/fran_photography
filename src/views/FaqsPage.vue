@@ -1,13 +1,14 @@
 <template>
   <div class="view__content">
-    <div class="title">
-      <div class="title__decoration"></div>
+    <div class="pageHeader">
       <h2 class="arima">Dúvidas</h2>
-      <div class="title__decoration"></div>
+    </div>
+    <div class="w-full max-w-5xl m-auto px-4">
+      <div class="pageHeader_divider" />
     </div>
     <div>
       <!-- tabs -->
-      <div class="relative flex justify-center w-full px-4">
+      <div class="relative flex justify-center w-full px-4 mt-4 sm:mt-0">
         <Listbox v-model="selectedCategory">
           <div class="relative w-full">
             <p class="text-left mb-2 sm:hidden">Choose a category</p>
@@ -76,6 +77,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/vue/solid'
 import {
   Disclosure,
@@ -163,6 +165,7 @@ export default {
     }
   },
   computed: {
+    ...mapGetters(['lang']),
     sm() {
       return this.windowWidth >= 640
     }

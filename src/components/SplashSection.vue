@@ -3,14 +3,19 @@
     <div class="parallax splash"></div>
     <div class="title">
       <img src="../assets/fran-logo-white.png" alt="logo" srcset="" class="hidden md:block h-80">
-      <h1 class="header tangerine">Através do meu sonho, seus desejos sao realizados</h1>
+      <h1 class="header tangerine">{{ lang.landing.splash.tagline }}</h1>
     </div>
   </section>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
-  name: 'SplashSection'
+  name: 'SplashSection',
+    computed: {
+    ...mapGetters(['lang'])
+  }
 }
 </script>
 

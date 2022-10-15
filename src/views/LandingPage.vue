@@ -37,7 +37,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .photo1 {
   @apply h-2/3;
   background-image: url("../assets/placeholders/download/P10002260074.jpg");

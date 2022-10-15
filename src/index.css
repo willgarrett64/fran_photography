@@ -34,10 +34,11 @@ html {
 
 /*  */
 .view__content {
-  @apply mt-28 md:mt-20 pb-10;
+  @apply mt-28 md:mt-28 pb-10;
 }
 
-/* landing page section title and decoration */
+
+/* landing page section title */
 .title {
   @apply w-full px-4 py-8 flex justify-center items-center;
 }
@@ -49,14 +50,6 @@ html {
   @apply w-full bg-gray-500 rounded;
   height: 2px
 }
-
-.social__icons {
-  @apply w-full flex justify-center space-x-8 pt-1;
-}
-.social__icon {
-  @apply w-8;
-}
-
 @screen lg {
   .title {
     @apply pt-16 space-x-10;
@@ -65,4 +58,20 @@ html {
     @apply border-b-2;
     font-size: 2.5rem;
   }
+}
+
+/* service and faq page headers */
+.pageHeader {
+  font-size: 2.5rem;
+}
+.pageHeader_divider {
+  @apply w-full border-t;
+  border-color: var(--default-blue);
+}
+
+.social__icons {
+  @apply w-full flex justify-center space-x-8 pt-1;
+}
+.social__icon {
+  @apply w-8;
 }
