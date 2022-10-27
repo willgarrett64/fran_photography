@@ -5,13 +5,12 @@
       <img src="../assets/fran-logo-colours.png" alt="logo" class="h-20" :class="hideLogo ? 'hidden' : ''">
     </router-link>
     <!-- burger menu -->
-    <svg @click="toggleMenu" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 md:hidden" fill="none" viewBox="0 0 24 24" stroke="#000" stroke-width="1.5">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-    </svg>
+    <svg @click="toggleMenu" xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 md:hidden" fill="none" viewBox="0 0 24 24" stroke="#000" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
+    <!-- menu -->
     <ul class="navbar__menu_desktop">
       <li @click="scrollTo('about')">{{ lang.nav.links[0] }}</li>
       <div class="services_dropdown">
-        <li @click="scrollTo('gallery')" class="services_dropdown-button">{{ lang.nav.links[1] }}</li>
+        <li @click="scrollTo('services')" class="services_dropdown-button">{{ lang.nav.links[1] }}</li>
         <div class="services_dropdown-content">
           <li >
             <router-link :to="{ name: 'ServicePage', params: { service:'pregnancy' } }">{{ lang.nav.services[0] }}</router-link>

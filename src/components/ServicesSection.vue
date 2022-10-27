@@ -1,5 +1,5 @@
 <template>
-  <section class="cover relative parallax gallery h-screen" id="gallery">
+  <section class="cover relative parallax gallery h-screen" id="services">
     <div class="title">
       <div class="title__decoration"></div>
       <h2 class="arima">{{ lang.landing.services.header }}</h2>
