@@ -1,12 +1,12 @@
 <template>
-  <div class="view__content">
+  <div class="view__content px-4 max-w-5xl m-auto ">
     <div class="pageHeader">
       <h2 class="arima">{{ lang.servicePage.services[collectionName].header }}</h2>
     </div>
     <div class="text-lg">
       <p>{{ lang.servicePage.services[collectionName].text }}</p>
     </div>
-    <div class="mt-4 px-4 max-w-5xl m-auto space-y-4">
+    <div class="mt-4 space-y-4">
       <div class="pageHeader_divider"></div>
       <div class="gallery__collection">
         <img
