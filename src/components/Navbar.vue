@@ -86,11 +86,11 @@ import {
 } from '@headlessui/vue'
 
 const languages = [
-  {
-    name: 'Deutsch',
-    code: 'de',
-    image: 'germany-flag.png'
-  },
+  // {
+  //   name: 'Deutsch',
+  //   code: 'de',
+  //   image: 'germany-flag.png'
+  // },
   {
     name: 'English',
     code: 'en',
@@ -107,7 +107,7 @@ export default {
   name: 'Navbar',
   data() {
     return {
-      language: languages[2],
+      language: languages[1],
       languages: languages,
       showMenu: false,
       windowWidth: window.innerWidth
