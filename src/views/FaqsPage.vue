@@ -197,14 +197,14 @@ export default {
 
 /* faq accordians */
 .disclosure__button {
-  @apply w-full flex relative items-center justify-center text-xl px-4 py-2 rounded;
+  @apply w-full flex relative items-center justify-center text-xl px-8 py-2 rounded;
   background-color: var(--fran-blue);
 }
 .disclosure__button:hover {
   color: white;
 }
 .disclosure__button .chevron {
-  @apply w-5 absolute right-5
+  @apply w-5 absolute right-2 sm:right-5
 }
 .disclosure__panel {
   @apply text-lg py-2
