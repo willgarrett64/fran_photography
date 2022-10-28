@@ -29,9 +29,9 @@
       </li>
       <li @click="goTo('contact')">Contato</li>
       <li class="lang space-x-2">
-        <button @click="selectLanguage('en')" :class="isSelected('en') ? 'selected' : ''">EN</button>
+        <span @click="selectLanguage('en')" :class="selectedLanguage === 'en' ? 'underline' : ''">EN</span>
         <span>|</span>
-        <button @click="selectLanguage('pt')" :class="isSelected('pt') ? 'selected' : ''">PT</button>
+        <span @click="selectLanguage('pt')" :class="selectedLanguage === 'pt' ? 'underline' : ''">PT</span>
       </li>
     </ul>
   </nav>
@@ -81,15 +81,17 @@ nav {
 }
 
 .navbar__menu li {
-  @apply text-2xl cursor-pointer hover:underline;
+  @apply text-2xl cursor-pointer;
   color: var(--fran-blue-dark);
+  -webkit-tap-highlight-color: transparent;
+}
+@media (hover: hover) {
+  .navbar__menu li:hover {
+    @apply underline
+  }
 }
 
 .navbar__menu li.lang {
   @apply text-sm;
-}
-
-button.selected {
-  @apply underline
 }
 </style>

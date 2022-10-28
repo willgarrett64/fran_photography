@@ -200,9 +200,12 @@ export default {
   @apply w-full flex relative items-center justify-center text-xl px-8 py-2 rounded;
   background-color: var(--fran-blue);
 }
-.disclosure__button:hover {
-  color: white;
+@media (hover: hover) {
+  .disclosure__button:hover {
+    color: white;
+  }
 }
+
 .disclosure__button .chevron {
   @apply w-5 absolute right-2 sm:right-5
 }
