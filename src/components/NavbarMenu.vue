@@ -10,25 +10,25 @@
     </div>
     <!-- menu -->
     <ul class="navbar__menu">
-      <li class="ibarra" @click="goTo('about')">{{ lang.nav.links[0] }}</li>
-      <li class="ibarra" @click="goTo('services')">{{ lang.nav.links[1] }}</li>
-      <li class="ibarra" @click="toggleMenu">
+      <li @click="goTo('about')">{{ lang.nav.links[0] }}</li>
+      <li @click="goTo('services')">{{ lang.nav.links[1] }}</li>
+      <li @click="toggleMenu">
         <router-link :to="{ name: 'ServicePage', params: { service:'pregnancy' } }">{{ lang.nav.services[0] }}</router-link>
       </li>
-      <li class="ibarra" @click="toggleMenu">
+      <li @click="toggleMenu">
         <router-link :to="{ name: 'ServicePage', params: { service:'newborn' } }">{{ lang.nav.services[1] }}</router-link>
       </li>
-      <li class="ibarra" @click="toggleMenu">
+      <li @click="toggleMenu">
         <router-link :to="{ name: 'ServicePage', params: { service:'family' } }">{{ lang.nav.services[2] }}</router-link>
       </li>
-      <li class="ibarra" @click="toggleMenu">
+      <li @click="toggleMenu">
         <router-link :to="{ name: 'ServicePage', params: { service:'portraits' } }">{{ lang.nav.services[3] }}</router-link>
       </li>
-      <li class="ibarra" @click="toggleMenu">
+      <li @click="toggleMenu">
         <router-link :to="{ name: 'FaqsPage' }">{{ lang.nav.links[2] }}</router-link>
       </li>
-      <li class="ibarra" @click="goTo('contact')">Contato</li>
-      <li class="ibarra lang space-x-2">
+      <li @click="goTo('contact')">Contato</li>
+      <li class="lang space-x-2">
         <button @click="selectLanguage('en')" :class="isSelected('en') ? 'selected' : ''">EN</button>
         <span>|</span>
         <button @click="selectLanguage('pt')" :class="isSelected('pt') ? 'selected' : ''">PT</button>
