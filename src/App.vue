@@ -14,6 +14,18 @@ export default {
   name: 'App',
   components: {
     Navbar
+  },
+  methods: {
+    setViewHeight: function() {
+      const vh = window.innerHeight * 0.01
+      document.documentElement.style.setProperty('--vh', `${vh}px`)
+    }
+  },
+  mounted: function() {
+    this.setViewHeight()
+    window.addEventListener('resize', () => {
+      this.setViewHeight()
+    })
   }
 }
 </script>
@@ -25,6 +37,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: var(--default-blue);
+  min-height: 100vh;
+  min-height: calc(var(--vh, 1vh) * 100);
 }
 
 .parallax {
