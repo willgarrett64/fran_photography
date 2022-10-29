@@ -21,7 +21,9 @@ export default {
 
 <style scoped>
 .cover {
-  @apply w-screen h-screen;
+  @apply w-screen;
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   object-fit: cover;
 }
 

@@ -84,7 +84,7 @@ nav {
   -webkit-tap-highlight-color: transparent;
 }
 .navbar__menu li.service {
-  @apply text-lg;
+  @apply text-xl;
 }
 
 @media (hover: hover) {
