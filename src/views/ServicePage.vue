@@ -40,16 +40,17 @@
       <div class="contact__section">
         <span class="name text-2xl">Francine Martello</span>
         <div class="flex items-center justify-center">
-          <div class="mr-2"><PhoneIcon class="w-5" /></div>
-          <span>+49 15752473422</span>
+          <div class="icon mr-2"><PhoneIcon class="w-5" /></div>
+          <a h-ref="tel:004915752473422">+49 15752473422</a>
         </div>
         <div class="flex items-center justify-center">
-          <div class="mr-2"><MailIcon class="w-5" /></div>
-          <a class="underline" href="mailto:martellofrancine@gmail.com">martellofrancine@gmail.com</a>
+          <div class="icon mr-2"><MailIcon class="w-5" /></div>
+          <a href="mailto:martellofrancine@gmail.com">martellofrancine@gmail.com</a>
         </div>
         <div class="flex items-center justify-center">
-          <div class="mr-2"><LocationMarkerIcon class="w-5" /></div>
-          <span>Kemptenerstraße 66, 87600 Kaufbeuren</span>
+          <div class="icon mr-2"><LocationMarkerIcon class="w-5" /></div>
+          <a href="https://goo.gl/maps/JMFcUwm6fEnvaSeD8" target="#">Kemptenerstraße 66, 87600 Kaufbeuren</a>
+
         </div>
         <div class="social__icons">
           <!-- facebook link -->
@@ -230,5 +231,17 @@ export default {
 .contact__section {
   @apply w-full py-4 flex flex-col space-y-2 text-xl rounded;
   font-weight: 600;
+}
+
+@media (max-width: 400px) {
+  .contact__section {
+    @apply text-base;
+  }
+}
+
+@media (max-width: 320px) {
+  .icon {
+    @apply hidden;
+  }
 }
 </style>
