@@ -52,6 +52,11 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
 }
+@media (max-width: 767px) {
+  .parallax {
+    background-attachment: unset
+  }
+}
 
 .overlay {
   @apply w-full h-full bg-gray-500 absolute top-0 z-40;

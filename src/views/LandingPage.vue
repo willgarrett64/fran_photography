@@ -56,7 +56,7 @@ export default {
   background-image: url("../assets/placeholders/download/anna-clara-hair.jpeg");
 }
 
-@screen md {
+@screen sm {
   .photo1 {
     @apply h-4/5;
     background-image: url("../assets/placeholders/download/P10002260069.jpg");
