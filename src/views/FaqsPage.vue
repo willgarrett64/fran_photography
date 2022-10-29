@@ -47,42 +47,17 @@
       </div>
       <!-- faqs -->
       <div class="max-w-5xl px-4 m-auto">
-        <div class="mt-8 flex flex-col space-y-2">
-          <Disclosure
-            v-slot="{ open }"
-            v-for="faq in faqs[selectedCategory]"
-            :key=faq.q
-          >
-            <DisclosureButton class="disclosure__button">
-              <span>{{ faq.q }}</span>
-              <ChevronRightIcon class="chevron w-5" :class="open && 'rotate-90 transform'"/>
-            </DisclosureButton>
-            <transition
-              enter-active-class="transition duration-100 ease-out"
-              enter-from-class="transform scale-y-0 origin-top"
-              enter-to-class="transform scale-y-100 origin-top"
-              leave-active-class="transition duration-75 ease-out"
-              leave-from-class="transform scale-y-100 origin-top"
-              leave-to-class="transform scale-y-0" origin-top
-            >
-              <DisclosurePanel class="disclosure__panel">
-                <span>{{ faq.a }}</span>
-              </DisclosurePanel>
-            </transition>
-          </Disclosure>
-        </div>
+        <Accordian :items=faqs[selectedCategory] />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Accordian from '../components/Accordian.vue'
+import { ChevronDownIcon } from '@heroicons/vue/solid'
 import { mapGetters } from 'vuex'
-import { ChevronDownIcon, ChevronRightIcon } from '@heroicons/vue/solid'
 import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
   Listbox,
   ListboxButton,
   ListboxOptions,
@@ -92,11 +67,8 @@ import {
 export default {
   name: 'FaqsPage',
   components: {
+    Accordian,
     ChevronDownIcon,
-    ChevronRightIcon,
-    Disclosure,
-    DisclosureButton,
-    DisclosurePanel,
     Listbox,
     ListboxButton,
     ListboxOptions,
@@ -185,25 +157,10 @@ export default {
 </script>
 
 <style scoped>
-.tab {
-  @apply px-4 sm:py-4 cursor-pointer text-2xl;
-}
-.tab:hover {
-  color: var(--fran-blue-dark);
-}
-.tab.selected {
-  color: var(--fran-blue-dark);
-}
-
 /* faq accordians */
 .disclosure__button {
   @apply w-full flex relative items-center justify-center text-xl px-8 py-2 rounded;
   background-color: var(--fran-blue);
-}
-@media (hover: hover) {
-  .disclosure__button:hover {
-    color: white;
-  }
 }
 
 .disclosure__button .chevron {
@@ -233,6 +190,15 @@ li.listOption.active, li.listOption.selected {
 @screen sm {
   .listOptions {
     @apply flex bg-transparent relative justify-center space-x-4 border-0
+  }
+}
+
+@media (hover: hover) {
+  .disclosure__button:hover {
+    color: white;
+  }
+  .listOption:hover {
+    color: var(--fran-blue-dark);
   }
 }
 </style>
