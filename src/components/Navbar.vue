@@ -157,6 +157,10 @@ export default {
   watch: {
     language() {
       this.$store.commit('setLanguage', this.language.code)
+    },
+    showMenu() {
+      if (this.showMenu) document.documentElement.style.overflow = 'hidden'
+      else document.documentElement.style.overflow = 'auto'
     }
   }
   // mounted() {

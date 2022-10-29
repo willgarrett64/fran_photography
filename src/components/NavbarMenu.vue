@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed top-0 left-0 h-screen w-screen z-50 px-6 py-6 overflow-hidden">
+  <nav class="fixed top-0 left-0 h-screen w-full z-50 px-6 py-6 overflow-hidden">
     <div class="flex justify-between items-center h-20">
       <!-- logo -->
       <div @click="goTo('')">
@@ -11,19 +11,21 @@
     <!-- menu -->
     <ul class="navbar__menu">
       <li @click="goTo('about')">{{ lang.nav.links[0] }}</li>
-      <li @click="goTo('services')">{{ lang.nav.links[1] }}</li>
-      <li @click="toggleMenu">
-        <router-link :to="{ name: 'ServicePage', params: { service:'pregnancy' } }">{{ lang.nav.services[0] }}</router-link>
-      </li>
-      <li @click="toggleMenu">
-        <router-link :to="{ name: 'ServicePage', params: { service:'newborn' } }">{{ lang.nav.services[1] }}</router-link>
-      </li>
-      <li @click="toggleMenu">
-        <router-link :to="{ name: 'ServicePage', params: { service:'family' } }">{{ lang.nav.services[2] }}</router-link>
-      </li>
-      <li @click="toggleMenu">
-        <router-link :to="{ name: 'ServicePage', params: { service:'portraits' } }">{{ lang.nav.services[3] }}</router-link>
-      </li>
+      <div class="space-y-3">
+        <li @click="goTo('services')">{{ lang.nav.links[1] }}</li>
+        <li class="service" @click="toggleMenu">
+          <router-link :to="{ name: 'ServicePage', params: { service:'pregnancy' } }">{{ lang.nav.services[0] }}</router-link>
+        </li>
+        <li class="service" @click="toggleMenu">
+          <router-link :to="{ name: 'ServicePage', params: { service:'newborn' } }">{{ lang.nav.services[1] }}</router-link>
+        </li>
+        <li class="service" @click="toggleMenu">
+          <router-link :to="{ name: 'ServicePage', params: { service:'family' } }">{{ lang.nav.services[2] }}</router-link>
+        </li>
+        <li class="service" @click="toggleMenu">
+          <router-link :to="{ name: 'ServicePage', params: { service:'portraits' } }">{{ lang.nav.services[3] }}</router-link>
+        </li>
+      </div>
       <li @click="toggleMenu">
         <router-link :to="{ name: 'FaqsPage' }">{{ lang.nav.links[2] }}</router-link>
       </li>
@@ -69,15 +71,11 @@ export default {
 <style  scoped>
 nav {
   background-color: rgb(242, 242, 242);
-  /* background-image: url("../assets/placeholders/white-background-2.jpg"); */
-  overflow-x: hidden;
-  object-fit: cover;
-  background-position: center;
 }
 
 .navbar__menu {
-  @apply flex flex-col justify-between pt-4;
-  height: calc(100vh - 8rem);
+  @apply flex flex-col justify-between pt-6;
+  height: calc(100vh - 12rem);
 }
 
 .navbar__menu li {
@@ -85,6 +83,10 @@ nav {
   color: var(--fran-blue-dark);
   -webkit-tap-highlight-color: transparent;
 }
+.navbar__menu li.service {
+  @apply text-lg;
+}
+
 @media (hover: hover) {
   .navbar__menu li:hover {
     @apply underline
