@@ -5,7 +5,7 @@
         <span class="name text-2xl">Francine Martello</span>
         <div class="flex items-center justify-center">
           <div class="icon mr-2"><PhoneIcon class="w-5" /></div>
-          <a h-ref="tel:004915752473422">+49 15752473422</a>
+          <a href="tel:004915752473422">+49 15752473422</a>
         </div>
         <div class="flex items-center justify-center">
           <div class="icon mr-2"><MailIcon class="w-5" /></div>
